@@ -1,0 +1,736 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<head>
+    <title>Computations of character sums</title>
+
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+
+    <style type="text/css">
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        border: 0;
+        margin-top: .5em;
+        margin-bottom: 2em;
+    }
+    
+    table thead tr {
+        font-weight: bold;
+        border-bottom: 2px solid gray;
+        text-align: center;
+    }
+
+    table tbody tr.reminder { 
+        text-align: center;
+        font-weight: bold;
+    }
+
+    table tbody tr.content td {
+        padding-left: 1em;
+        padding-right: 1em;
+        text-align: right;
+    }
+
+    h3 {
+        text-align:center;
+    }
+    h2 {
+        text-align:center;
+    }
+
+    p {
+        max-width: 60em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div {
+        max-width: 60em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+</head>
+<body>
+
+<h2>Some computations of character sums</h2>
+<p>
+    For a Dirichlet character \(\chi\) modulo q, it is a theorem that the
+    maximum of the character sum, \(M(\chi)\), is always bigger than a
+    constant times \(q^{1/2}\) and it is also a theorem that the
+    percentage of \(\chi\) modulo q such that \(M(\chi) \lt \alpha q\) goes
+    to 0 as q goes to infinity. This is the motivation for the following data,
+    which is related to a <a href="http://arxiv.org/abs/1110.0078">paper</a>
+    that Leo Goldmakher and I wrote.
+</p>
+<p>
+    First, here is a histogram of \(M(\chi)/q^{1/2}\) for q = 1128931, with
+    the data split into even and odd characters.
+</p>
+<p style="text-align:center;">
+    <img src="000001128931.png" alt="Histogram of M(chi)">
+</p>
+<p>
+    There is not much point to showing more histograms for q prime, really. They all look about
+    the same. But you can see an <a href="histogram_animation.mp4">animation</a> of
+    histograms for increasing primes.
+</p>
+<p>
+    Below are some tables of values of statistics for the distribution, split first
+    into even and odd characters, and then with all characters. In the tables below,
+    for each q, the minimum and maximum of \(M(\chi)\) are listed along with
+    some p-quantiles. The q's are a randomly chosen list of increasing primes.
+<p>
+<p>
+    Do these numbers approach a limit? (The maximum does not.)
+</p>
+<div>If you like this, you might also enjoy:
+    <ul>
+        <li>
+            My <a href="http://arxiv.org/abs/1110.0078">paper</a> with Leo Goldmakher.
+        </li>
+        <li>
+            The <a href="http://www.l-functions.org">LMFDB</a>, which might contain this data some day.
+        </li>
+    </ul>
+</div>
+<h3>Even characters</h3>
+
+<table>
+<thead><tr><td>q</td><td>min</td><td>.2</td><td>.5</td><td>.9</td><td>.99999</td><td>max</td></tr></thead><tbody>
+<tr class="content"><td>67</td><td>0.440488</td><td>0.478076</td><td>0.504441</td><td>0.587146</td><td>0.639042</td><td>0.639042</td></tr>
+<tr class="content"><td>1069</td><td>0.440353</td><td>0.510355</td><td>0.542225</td><td>0.616498</td><td>0.791107</td><td>0.791107</td></tr>
+<tr class="content"><td>2423</td><td>0.446221</td><td>0.509109</td><td>0.548597</td><td>0.625531</td><td>0.828182</td><td>0.828182</td></tr>
+<tr class="content"><td>3023</td><td>0.442333</td><td>0.511584</td><td>0.547266</td><td>0.623894</td><td>0.831599</td><td>0.831599</td></tr>
+<tr class="content"><td>4621</td><td>0.433619</td><td>0.514352</td><td>0.549275</td><td>0.625256</td><td>0.895405</td><td>0.895405</td></tr>
+<tr class="content"><td>5417</td><td>0.441178</td><td>0.512637</td><td>0.549539</td><td>0.628284</td><td>0.856257</td><td>0.856257</td></tr>
+<tr class="content"><td>6397</td><td>0.429469</td><td>0.513311</td><td>0.549741</td><td>0.627548</td><td>0.915757</td><td>0.915757</td></tr>
+<tr class="content"><td>7321</td><td>0.441154</td><td>0.512860</td><td>0.550230</td><td>0.628165</td><td>0.900053</td><td>0.900053</td></tr>
+<tr class="content"><td>8731</td><td>0.446683</td><td>0.514588</td><td>0.550127</td><td>0.628257</td><td>0.890133</td><td>0.890133</td></tr>
+<tr class="content"><td>9059</td><td>0.450947</td><td>0.513656</td><td>0.551492</td><td>0.628371</td><td>0.908130</td><td>0.908130</td></tr>
+<tr class="content"><td>10589</td><td>0.436819</td><td>0.514585</td><td>0.550362</td><td>0.625430</td><td>0.957579</td><td>0.957579</td></tr>
+<tr class="content"><td>11909</td><td>0.437031</td><td>0.514304</td><td>0.551422</td><td>0.630495</td><td>0.962166</td><td>0.962166</td></tr>
+<tr class="content"><td>12433</td><td>0.434252</td><td>0.515474</td><td>0.551269</td><td>0.630257</td><td>0.935498</td><td>0.935498</td></tr>
+<tr class="content"><td>13513</td><td>0.434720</td><td>0.516462</td><td>0.552112</td><td>0.628969</td><td>0.966284</td><td>0.966284</td></tr>
+<tr class="content"><td>14503</td><td>0.430981</td><td>0.515965</td><td>0.550936</td><td>0.629512</td><td>0.956104</td><td>0.956104</td></tr>
+<tr class="content"><td>15803</td><td>0.430010</td><td>0.515152</td><td>0.551723</td><td>0.628904</td><td>0.895631</td><td>0.895631</td></tr>
+<tr class="content"><td>16477</td><td>0.434144</td><td>0.514707</td><td>0.551265</td><td>0.628755</td><td>0.916274</td><td>0.916274</td></tr>
+<tr class="content"><td>17207</td><td>0.428716</td><td>0.516044</td><td>0.551806</td><td>0.631011</td><td>0.944818</td><td>0.944818</td></tr>
+<tr class="content"><td>18047</td><td>0.438850</td><td>0.515758</td><td>0.552020</td><td>0.632328</td><td>0.928463</td><td>0.928463</td></tr>
+<tr class="content"><td>19267</td><td>0.423128</td><td>0.515590</td><td>0.551774</td><td>0.629886</td><td>0.934220</td><td>0.934220</td></tr>
+<tr class="content"><td>20089</td><td>0.436064</td><td>0.515860</td><td>0.552649</td><td>0.630169</td><td>0.926881</td><td>0.926881</td></tr>
+<tr class="content"><td>21799</td><td>0.426458</td><td>0.515549</td><td>0.552525</td><td>0.629787</td><td>0.929549</td><td>0.929549</td></tr>
+<tr class="content"><td>22147</td><td>0.423835</td><td>0.516762</td><td>0.552088</td><td>0.628663</td><td>0.990308</td><td>0.990308</td></tr>
+<tr class="content"><td>23099</td><td>0.430310</td><td>0.515786</td><td>0.552247</td><td>0.629348</td><td>0.935882</td><td>0.935882</td></tr>
+<tr class="content"><td>24767</td><td>0.426694</td><td>0.516784</td><td>0.551686</td><td>0.631343</td><td>0.932642</td><td>0.932642</td></tr>
+<tr class="content"><td>25589</td><td>0.436912</td><td>0.515068</td><td>0.552059</td><td>0.629792</td><td>0.938475</td><td>0.938475</td></tr>
+<tr class="content"><td>26641</td><td>0.436726</td><td>0.516078</td><td>0.552321</td><td>0.629301</td><td>0.971034</td><td>0.971034</td></tr>
+<tr class="content"><td>27259</td><td>0.439395</td><td>0.515915</td><td>0.552641</td><td>0.630178</td><td>0.988081</td><td>0.988081</td></tr>
+<tr class="content"><td>28661</td><td>0.426519</td><td>0.516700</td><td>0.552913</td><td>0.629102</td><td>0.947911</td><td>0.947911</td></tr>
+<tr class="content"><td>29021</td><td>0.422141</td><td>0.517555</td><td>0.552213</td><td>0.629967</td><td>0.918626</td><td>0.918626</td></tr>
+<tr class="content"><td>30161</td><td>0.430778</td><td>0.516356</td><td>0.552612</td><td>0.630735</td><td>0.958806</td><td>0.958806</td></tr>
+<tr class="content"><td>31333</td><td>0.431559</td><td>0.516207</td><td>0.552748</td><td>0.630010</td><td>0.994430</td><td>0.994430</td></tr>
+<tr class="content"><td>32429</td><td>0.430291</td><td>0.516678</td><td>0.552435</td><td>0.630636</td><td>0.934160</td><td>0.934160</td></tr>
+<tr class="content"><td>33469</td><td>0.426685</td><td>0.516473</td><td>0.552357</td><td>0.629477</td><td>0.959409</td><td>0.959409</td></tr>
+<tr class="content"><td>34403</td><td>0.432499</td><td>0.517065</td><td>0.552733</td><td>0.631566</td><td>0.976206</td><td>0.976206</td></tr>
+<tr class="content"><td>35491</td><td>0.427089</td><td>0.516317</td><td>0.553104</td><td>0.631458</td><td>0.957177</td><td>0.957177</td></tr>
+<tr class="content"><td>36457</td><td>0.432674</td><td>0.515866</td><td>0.552433</td><td>0.629890</td><td>0.957056</td><td>0.957056</td></tr>
+<tr class="content"><td>37397</td><td>0.436353</td><td>0.516445</td><td>0.552740</td><td>0.630233</td><td>0.968171</td><td>0.968171</td></tr>
+<tr class="content"><td>38069</td><td>0.436671</td><td>0.516733</td><td>0.552095</td><td>0.630005</td><td>0.936402</td><td>0.936402</td></tr>
+<tr class="content"><td>39383</td><td>0.429809</td><td>0.516603</td><td>0.552411</td><td>0.630074</td><td>0.966885</td><td>0.966885</td></tr>
+<tr class="content"><td>40507</td><td>0.439864</td><td>0.516662</td><td>0.553037</td><td>0.630848</td><td>0.943715</td><td>0.943715</td></tr>
+<tr class="content"><td>41233</td><td>0.438998</td><td>0.516576</td><td>0.553441</td><td>0.630018</td><td>0.985493</td><td>0.985493</td></tr>
+<tr class="content"><td>42989</td><td>0.421131</td><td>0.516447</td><td>0.552842</td><td>0.631289</td><td>0.979940</td><td>0.979940</td></tr>
+<tr class="content"><td>43051</td><td>0.437297</td><td>0.516001</td><td>0.552415</td><td>0.630734</td><td>0.978811</td><td>0.978811</td></tr>
+<tr class="content"><td>44531</td><td>0.425204</td><td>0.516893</td><td>0.552957</td><td>0.631519</td><td>0.983143</td><td>0.983143</td></tr>
+<tr class="content"><td>45139</td><td>0.432560</td><td>0.516344</td><td>0.552722</td><td>0.629071</td><td>0.986920</td><td>0.986920</td></tr>
+<tr class="content"><td>46769</td><td>0.421788</td><td>0.516679</td><td>0.552917</td><td>0.630532</td><td>1.005880</td><td>1.005880</td></tr>
+<tr class="content"><td>47591</td><td>0.424536</td><td>0.516530</td><td>0.552789</td><td>0.629713</td><td>1.006627</td><td>1.006627</td></tr>
+<tr class="content"><td>48281</td><td>0.425722</td><td>0.516682</td><td>0.553016</td><td>0.630855</td><td>0.974865</td><td>0.974865</td></tr>
+<tr class="content"><td>49123</td><td>0.421696</td><td>0.516839</td><td>0.552688</td><td>0.631441</td><td>0.968143</td><td>0.968143</td></tr>
+<tr class="content"><td>50893</td><td>0.429161</td><td>0.517045</td><td>0.553081</td><td>0.630229</td><td>0.979828</td><td>0.979828</td></tr>
+<tr class="content"><td>51307</td><td>0.431553</td><td>0.516749</td><td>0.552703</td><td>0.632117</td><td>0.951492</td><td>0.951492</td></tr>
+<tr class="content"><td>52127</td><td>0.431166</td><td>0.516769</td><td>0.553003</td><td>0.631189</td><td>0.986425</td><td>0.986425</td></tr>
+<tr class="content"><td>53267</td><td>0.438614</td><td>0.516874</td><td>0.553468</td><td>0.631184</td><td>0.992816</td><td>0.992816</td></tr>
+<tr class="content"><td>54437</td><td>0.431416</td><td>0.516857</td><td>0.553395</td><td>0.629844</td><td>0.974256</td><td>0.974256</td></tr>
+<tr class="content"><td>55609</td><td>0.414333</td><td>0.516663</td><td>0.553417</td><td>0.630906</td><td>0.990161</td><td>0.990161</td></tr>
+<tr class="content"><td>56333</td><td>0.425837</td><td>0.517046</td><td>0.553122</td><td>0.631026</td><td>1.003937</td><td>1.003937</td></tr>
+<tr class="content"><td>57751</td><td>0.432298</td><td>0.516534</td><td>0.553039</td><td>0.630512</td><td>1.000383</td><td>1.000383</td></tr>
+<tr class="content"><td>58057</td><td>0.435011</td><td>0.516623</td><td>0.553023</td><td>0.630735</td><td>0.972773</td><td>0.972773</td></tr>
+<tr class="content"><td>59141</td><td>0.426799</td><td>0.516887</td><td>0.552867</td><td>0.631565</td><td>0.977096</td><td>0.977096</td></tr>
+<tr class="content"><td>60899</td><td>0.434179</td><td>0.516791</td><td>0.552877</td><td>0.630128</td><td>0.941461</td><td>0.941461</td></tr>
+<tr class="content"><td>61357</td><td>0.423929</td><td>0.516728</td><td>0.553316</td><td>0.629921</td><td>0.951021</td><td>0.951021</td></tr>
+<tr class="content"><td>62903</td><td>0.420265</td><td>0.516776</td><td>0.552902</td><td>0.631308</td><td>0.975027</td><td>0.975027</td></tr>
+<tr class="content"><td>63901</td><td>0.430804</td><td>0.516759</td><td>0.552849</td><td>0.631167</td><td>1.024621</td><td>1.024621</td></tr>
+<tr class="content"><td>64811</td><td>0.432101</td><td>0.516945</td><td>0.553099</td><td>0.631139</td><td>0.964088</td><td>0.964088</td></tr>
+<tr class="content"><td>65407</td><td>0.425582</td><td>0.516718</td><td>0.552767</td><td>0.631443</td><td>0.960086</td><td>0.960086</td></tr>
+<tr class="content"><td>66593</td><td>0.425393</td><td>0.516618</td><td>0.553155</td><td>0.630784</td><td>0.986872</td><td>0.986872</td></tr>
+<tr class="content"><td>67751</td><td>0.423200</td><td>0.517234</td><td>0.553077</td><td>0.631017</td><td>0.987270</td><td>0.987270</td></tr>
+<tr class="content"><td>68489</td><td>0.428231</td><td>0.517115</td><td>0.553199</td><td>0.632074</td><td>1.022614</td><td>1.022614</td></tr>
+<tr class="content"><td>69473</td><td>0.430000</td><td>0.516980</td><td>0.553246</td><td>0.631232</td><td>1.004928</td><td>1.004928</td></tr>
+<tr class="content"><td>70667</td><td>0.428418</td><td>0.516780</td><td>0.553341</td><td>0.630778</td><td>0.994870</td><td>0.994870</td></tr>
+<tr class="content"><td>71789</td><td>0.421447</td><td>0.516997</td><td>0.553589</td><td>0.630677</td><td>1.043033</td><td>1.043033</td></tr>
+<tr class="content"><td>72953</td><td>0.419186</td><td>0.517078</td><td>0.553229</td><td>0.631336</td><td>0.982263</td><td>0.982263</td></tr>
+<tr class="content"><td>73847</td><td>0.425893</td><td>0.516956</td><td>0.553255</td><td>0.630977</td><td>1.008743</td><td>1.008743</td></tr>
+<tr class="content"><td>74843</td><td>0.412579</td><td>0.517029</td><td>0.552980</td><td>0.631182</td><td>1.015127</td><td>1.015127</td></tr>
+<tr class="content"><td>75709</td><td>0.431883</td><td>0.516726</td><td>0.553693</td><td>0.632192</td><td>1.034083</td><td>1.034083</td></tr>
+<tr class="content"><td>76717</td><td>0.420029</td><td>0.516975</td><td>0.553145</td><td>0.631281</td><td>1.033334</td><td>1.033334</td></tr>
+<tr class="content"><td>77317</td><td>0.426190</td><td>0.517170</td><td>0.553216</td><td>0.631289</td><td>0.998683</td><td>0.998683</td></tr>
+<tr class="content"><td>78539</td><td>0.430674</td><td>0.517049</td><td>0.552855</td><td>0.630283</td><td>0.996383</td><td>0.996383</td></tr>
+<tr class="content"><td>79939</td><td>0.427027</td><td>0.517297</td><td>0.553570</td><td>0.631138</td><td>0.992152</td><td>0.992152</td></tr>
+<tr class="content"><td>80651</td><td>0.424633</td><td>0.517402</td><td>0.553200</td><td>0.631166</td><td>1.025184</td><td>1.025184</td></tr>
+<tr class="content"><td>81611</td><td>0.433519</td><td>0.516974</td><td>0.553123</td><td>0.631032</td><td>0.988877</td><td>0.988877</td></tr>
+<tr class="content"><td>82883</td><td>0.427615</td><td>0.517255</td><td>0.553295</td><td>0.631447</td><td>0.994875</td><td>0.994875</td></tr>
+<tr class="content"><td>83591</td><td>0.415482</td><td>0.517373</td><td>0.553421</td><td>0.631689</td><td>1.015629</td><td>1.015629</td></tr>
+<tr class="content"><td>84377</td><td>0.421204</td><td>0.517103</td><td>0.553262</td><td>0.630917</td><td>0.995922</td><td>0.995922</td></tr>
+<tr class="content"><td>85643</td><td>0.432835</td><td>0.516981</td><td>0.553267</td><td>0.631737</td><td>0.969199</td><td>0.969199</td></tr>
+<tr class="content"><td>86993</td><td>0.436081</td><td>0.517053</td><td>0.553064</td><td>0.631225</td><td>1.003272</td><td>1.003272</td></tr>
+<tr class="content"><td>87181</td><td>0.431554</td><td>0.517222</td><td>0.553140</td><td>0.630902</td><td>0.981346</td><td>0.981346</td></tr>
+<tr class="content"><td>88177</td><td>0.427035</td><td>0.517002</td><td>0.553386</td><td>0.630988</td><td>1.028642</td><td>1.028642</td></tr>
+<tr class="content"><td>89783</td><td>0.417513</td><td>0.516898</td><td>0.553695</td><td>0.630587</td><td>1.013379</td><td>1.013379</td></tr>
+<tr class="content"><td>90247</td><td>0.427056</td><td>0.517285</td><td>0.553240</td><td>0.631398</td><td>1.000044</td><td>1.000044</td></tr>
+<tr class="content"><td>91757</td><td>0.421551</td><td>0.517001</td><td>0.553474</td><td>0.632061</td><td>1.030392</td><td>1.030392</td></tr>
+<tr class="content"><td>92861</td><td>0.426740</td><td>0.517098</td><td>0.553397</td><td>0.631211</td><td>0.998514</td><td>0.998514</td></tr>
+<tr class="content"><td>93683</td><td>0.424017</td><td>0.517029</td><td>0.553176</td><td>0.631211</td><td>0.993574</td><td>0.993574</td></tr>
+<tr class="content"><td>94433</td><td>0.431929</td><td>0.517248</td><td>0.553494</td><td>0.630890</td><td>1.025169</td><td>1.025169</td></tr>
+<tr class="content"><td>95857</td><td>0.425759</td><td>0.517168</td><td>0.553472</td><td>0.630996</td><td>1.001003</td><td>1.001003</td></tr>
+<tr class="content"><td>96601</td><td>0.431783</td><td>0.517218</td><td>0.553590</td><td>0.631060</td><td>1.013484</td><td>1.013484</td></tr>
+<tr class="content"><td>97673</td><td>0.428917</td><td>0.517290</td><td>0.553197</td><td>0.631595</td><td>0.972075</td><td>0.972075</td></tr>
+<tr class="content"><td>98597</td><td>0.423846</td><td>0.517214</td><td>0.553646</td><td>0.631660</td><td>0.970857</td><td>0.970857</td></tr>
+<tr class="content"><td>99991</td><td>0.424659</td><td>0.517159</td><td>0.553482</td><td>0.631807</td><td>1.011097</td><td>1.011097</td></tr>
+<tr class="content"><td>109841</td><td>0.423399</td><td>0.517346</td><td>0.553806</td><td>0.631336</td><td>0.994766</td><td>0.994766</td></tr>
+<tr class="content"><td>119851</td><td>0.415567</td><td>0.517494</td><td>0.553614</td><td>0.630683</td><td>1.057405</td><td>1.057405</td></tr>
+<tr class="content"><td>127931</td><td>0.419790</td><td>0.517421</td><td>0.553325</td><td>0.631493</td><td>1.035114</td><td>1.035114</td></tr>
+<tr class="content"><td>133109</td><td>0.425388</td><td>0.517163</td><td>0.553699</td><td>0.631389</td><td>0.999952</td><td>0.999952</td></tr>
+<tr class="content"><td>142403</td><td>0.417646</td><td>0.517569</td><td>0.553638</td><td>0.631511</td><td>1.002288</td><td>1.002288</td></tr>
+<tr class="content"><td>152519</td><td>0.424360</td><td>0.517724</td><td>0.553520</td><td>0.632121</td><td>0.988631</td><td>0.988631</td></tr>
+<tr class="content"><td>165887</td><td>0.420550</td><td>0.517650</td><td>0.553514</td><td>0.631585</td><td>0.995119</td><td>0.995119</td></tr>
+<tr class="content"><td>177953</td><td>0.424707</td><td>0.517688</td><td>0.553886</td><td>0.631263</td><td>1.057242</td><td>1.057242</td></tr>
+<tr class="content"><td>181213</td><td>0.426561</td><td>0.517482</td><td>0.553930</td><td>0.631376</td><td>1.012161</td><td>1.012161</td></tr>
+<tr class="content"><td>197101</td><td>0.407015</td><td>0.517517</td><td>0.553768</td><td>0.631268</td><td>1.059508</td><td>1.059508</td></tr>
+<tr class="content"><td>205937</td><td>0.429896</td><td>0.517343</td><td>0.553716</td><td>0.631497</td><td>1.016510</td><td>1.016510</td></tr>
+<tr class="content"><td>210131</td><td>0.421151</td><td>0.517510</td><td>0.553965</td><td>0.631277</td><td>1.038232</td><td>1.038232</td></tr>
+<tr class="content"><td>220009</td><td>0.417369</td><td>0.517735</td><td>0.553859</td><td>0.631582</td><td>1.045122</td><td>1.045122</td></tr>
+<tr class="content"><td>237071</td><td>0.424736</td><td>0.517381</td><td>0.554124</td><td>0.631744</td><td>1.070610</td><td>1.070610</td></tr>
+<tr class="content"><td>240733</td><td>0.426576</td><td>0.517556</td><td>0.553887</td><td>0.631462</td><td>1.040155</td><td>1.040155</td></tr>
+<tr class="content"><td>259751</td><td>0.420162</td><td>0.517678</td><td>0.554125</td><td>0.632128</td><td>1.003431</td><td>1.003431</td></tr>
+<tr class="content"><td>262331</td><td>0.421356</td><td>0.517529</td><td>0.554078</td><td>0.631721</td><td>1.002652</td><td>1.002652</td></tr>
+<tr class="content"><td>279481</td><td>0.418743</td><td>0.517694</td><td>0.553921</td><td>0.631711</td><td>1.017207</td><td>1.017207</td></tr>
+<tr class="content"><td>284311</td><td>0.414629</td><td>0.517749</td><td>0.554017</td><td>0.631699</td><td>1.038083</td><td>1.038083</td></tr>
+<tr class="content"><td>295049</td><td>0.423653</td><td>0.517970</td><td>0.553859</td><td>0.631985</td><td>1.025067</td><td>1.025067</td></tr>
+<tr class="content"><td>302297</td><td>0.414184</td><td>0.517723</td><td>0.554000</td><td>0.631360</td><td>1.017618</td><td>1.017618</td></tr>
+<tr class="content"><td>319577</td><td>0.417730</td><td>0.517576</td><td>0.554047</td><td>0.631654</td><td>1.035919</td><td>1.035919</td></tr>
+<tr class="content"><td>326657</td><td>0.424214</td><td>0.517921</td><td>0.554062</td><td>0.632095</td><td>1.055817</td><td>1.055817</td></tr>
+<tr class="content"><td>334753</td><td>0.421618</td><td>0.517743</td><td>0.554127</td><td>0.631309</td><td>1.087800</td><td>1.087800</td></tr>
+<tr class="content"><td>343411</td><td>0.418871</td><td>0.517803</td><td>0.554030</td><td>0.632026</td><td>1.056492</td><td>1.056492</td></tr>
+<tr class="content"><td>350617</td><td>0.422062</td><td>0.517842</td><td>0.554025</td><td>0.632232</td><td>1.062013</td><td>1.062013</td></tr>
+<tr class="content"><td>362983</td><td>0.409468</td><td>0.517651</td><td>0.554081</td><td>0.631993</td><td>1.079587</td><td>1.079587</td></tr>
+<tr class="content"><td>374083</td><td>0.423367</td><td>0.517729</td><td>0.554098</td><td>0.631762</td><td>1.044481</td><td>1.044481</td></tr>
+<tr class="content"><td>381377</td><td>0.422006</td><td>0.517839</td><td>0.553870</td><td>0.631654</td><td>1.060641</td><td>1.060641</td></tr>
+<tr class="content"><td>393989</td><td>0.420410</td><td>0.517818</td><td>0.554005</td><td>0.631457</td><td>1.033187</td><td>1.033187</td></tr>
+<tr class="content"><td>404177</td><td>0.425492</td><td>0.517731</td><td>0.554075</td><td>0.631723</td><td>1.050929</td><td>1.080535</td></tr>
+<tr class="content"><td>417883</td><td>0.417731</td><td>0.517856</td><td>0.553958</td><td>0.632050</td><td>1.035647</td><td>1.089701</td></tr>
+<tr class="content"><td>425549</td><td>0.418261</td><td>0.517849</td><td>0.554162</td><td>0.631942</td><td>1.050811</td><td>1.070541</td></tr>
+<tr class="content"><td>431803</td><td>0.423169</td><td>0.517760</td><td>0.554019</td><td>0.631873</td><td>1.056933</td><td>1.096593</td></tr>
+<tr class="content"><td>445199</td><td>0.421707</td><td>0.517812</td><td>0.554126</td><td>0.632349</td><td>1.039270</td><td>1.044257</td></tr>
+<tr class="content"><td>456499</td><td>0.419241</td><td>0.517909</td><td>0.554106</td><td>0.631695</td><td>1.026211</td><td>1.089081</td></tr>
+<tr class="content"><td>467879</td><td>0.424806</td><td>0.517890</td><td>0.554094</td><td>0.632138</td><td>1.039748</td><td>1.046564</td></tr>
+<tr class="content"><td>473833</td><td>0.409727</td><td>0.517847</td><td>0.553951</td><td>0.632041</td><td>1.050817</td><td>1.051418</td></tr>
+<tr class="content"><td>481297</td><td>0.418793</td><td>0.517786</td><td>0.554220</td><td>0.631747</td><td>1.034102</td><td>1.051632</td></tr>
+<tr class="content"><td>491501</td><td>0.416538</td><td>0.517811</td><td>0.554085</td><td>0.631950</td><td>1.056753</td><td>1.057152</td></tr>
+<tr class="content"><td>506047</td><td>0.421180</td><td>0.517840</td><td>0.554034</td><td>0.632125</td><td>1.030522</td><td>1.050104</td></tr>
+<tr class="content"><td>517873</td><td>0.423061</td><td>0.517975</td><td>0.554114</td><td>0.631977</td><td>1.068332</td><td>1.103451</td></tr>
+<tr class="content"><td>527789</td><td>0.418630</td><td>0.517963</td><td>0.554158</td><td>0.632279</td><td>1.044087</td><td>1.078598</td></tr>
+<tr class="content"><td>539783</td><td>0.421472</td><td>0.517756</td><td>0.554353</td><td>0.631838</td><td>1.041271</td><td>1.103634</td></tr>
+<tr class="content"><td>540377</td><td>0.419038</td><td>0.517747</td><td>0.554185</td><td>0.632331</td><td>1.044285</td><td>1.050809</td></tr>
+<tr class="content"><td>559907</td><td>0.423118</td><td>0.517929</td><td>0.554177</td><td>0.632095</td><td>1.033204</td><td>1.038355</td></tr>
+<tr class="content"><td>562781</td><td>0.414868</td><td>0.517782</td><td>0.554098</td><td>0.631831</td><td>1.022096</td><td>1.096634</td></tr>
+<tr class="content"><td>577939</td><td>0.404130</td><td>0.517828</td><td>0.554282</td><td>0.631824</td><td>1.047612</td><td>1.051409</td></tr>
+<tr class="content"><td>585289</td><td>0.417024</td><td>0.517973</td><td>0.554158</td><td>0.631915</td><td>1.051313</td><td>1.076149</td></tr>
+<tr class="content"><td>593783</td><td>0.419647</td><td>0.517991</td><td>0.554213</td><td>0.631609</td><td>1.032165</td><td>1.057647</td></tr>
+<tr class="content"><td>607127</td><td>0.419903</td><td>0.517909</td><td>0.554304</td><td>0.631986</td><td>1.026958</td><td>1.029328</td></tr>
+<tr class="content"><td>610523</td><td>0.420184</td><td>0.517893</td><td>0.554208</td><td>0.631962</td><td>1.069936</td><td>1.147833</td></tr>
+<tr class="content"><td>620159</td><td>0.420258</td><td>0.517830</td><td>0.554456</td><td>0.631912</td><td>1.072705</td><td>1.086182</td></tr>
+<tr class="content"><td>630871</td><td>0.416369</td><td>0.517868</td><td>0.554192</td><td>0.631922</td><td>1.064445</td><td>1.087675</td></tr>
+<tr class="content"><td>641897</td><td>0.424171</td><td>0.517981</td><td>0.554184</td><td>0.631891</td><td>1.081824</td><td>1.111561</td></tr>
+<tr class="content"><td>651103</td><td>0.421044</td><td>0.517939</td><td>0.554198</td><td>0.632125</td><td>1.041607</td><td>1.108804</td></tr>
+<tr class="content"><td>667883</td><td>0.413223</td><td>0.517937</td><td>0.554199</td><td>0.632081</td><td>1.058546</td><td>1.071691</td></tr>
+<tr class="content"><td>674299</td><td>0.420410</td><td>0.517793</td><td>0.554346</td><td>0.632214</td><td>1.061749</td><td>1.092752</td></tr>
+<tr class="content"><td>686969</td><td>0.420646</td><td>0.518015</td><td>0.554304</td><td>0.631998</td><td>1.076582</td><td>1.076918</td></tr>
+<tr class="content"><td>696853</td><td>0.415018</td><td>0.517965</td><td>0.554175</td><td>0.631697</td><td>1.061876</td><td>1.063630</td></tr>
+<tr class="content"><td>700099</td><td>0.420635</td><td>0.517884</td><td>0.554242</td><td>0.631960</td><td>1.038434</td><td>1.073448</td></tr>
+<tr class="content"><td>714503</td><td>0.403388</td><td>0.518040</td><td>0.554277</td><td>0.631943</td><td>1.076387</td><td>1.081860</td></tr>
+<tr class="content"><td>721697</td><td>0.423175</td><td>0.517933</td><td>0.554109</td><td>0.632247</td><td>1.055505</td><td>1.066897</td></tr>
+<tr class="content"><td>731249</td><td>0.416488</td><td>0.518047</td><td>0.554266</td><td>0.631653</td><td>1.072168</td><td>1.077550</td></tr>
+<tr class="content"><td>746167</td><td>0.424757</td><td>0.517816</td><td>0.554381</td><td>0.632258</td><td>1.021948</td><td>1.063995</td></tr>
+<tr class="content"><td>758893</td><td>0.420553</td><td>0.517915</td><td>0.554386</td><td>0.632178</td><td>1.056537</td><td>1.104019</td></tr>
+<tr class="content"><td>769039</td><td>0.413051</td><td>0.517961</td><td>0.554436</td><td>0.631996</td><td>1.071057</td><td>1.080712</td></tr>
+<tr class="content"><td>778313</td><td>0.419628</td><td>0.517915</td><td>0.554271</td><td>0.632051</td><td>1.037229</td><td>1.151143</td></tr>
+<tr class="content"><td>788677</td><td>0.422306</td><td>0.517807</td><td>0.554316</td><td>0.632066</td><td>1.051267</td><td>1.059420</td></tr>
+<tr class="content"><td>799171</td><td>0.422207</td><td>0.518108</td><td>0.554231</td><td>0.632167</td><td>1.068810</td><td>1.089774</td></tr>
+<tr class="content"><td>802141</td><td>0.406761</td><td>0.517935</td><td>0.554241</td><td>0.632093</td><td>1.059907</td><td>1.104784</td></tr>
+<tr class="content"><td>811523</td><td>0.413906</td><td>0.518055</td><td>0.554278</td><td>0.632166</td><td>1.056405</td><td>1.083153</td></tr>
+<tr class="content"><td>820711</td><td>0.414216</td><td>0.517963</td><td>0.554252</td><td>0.632090</td><td>1.042245</td><td>1.044952</td></tr>
+<tr class="content"><td>838589</td><td>0.422398</td><td>0.517979</td><td>0.554273</td><td>0.631942</td><td>1.054933</td><td>1.057199</td></tr>
+<tr class="content"><td>844777</td><td>0.423870</td><td>0.517945</td><td>0.554309</td><td>0.632070</td><td>1.051960</td><td>1.096339</td></tr>
+<tr class="content"><td>854129</td><td>0.421608</td><td>0.518023</td><td>0.554246</td><td>0.632188</td><td>1.057159</td><td>1.075656</td></tr>
+<tr class="content"><td>865357</td><td>0.414149</td><td>0.517953</td><td>0.554266</td><td>0.631813</td><td>1.055120</td><td>1.092666</td></tr>
+<tr class="content"><td>872129</td><td>0.401923</td><td>0.518047</td><td>0.554262</td><td>0.632109</td><td>1.112607</td><td>1.125619</td></tr>
+<tr class="content"><td>885473</td><td>0.420575</td><td>0.518036</td><td>0.554347</td><td>0.631827</td><td>1.061674</td><td>1.093903</td></tr>
+<tr class="content"><td>890887</td><td>0.421074</td><td>0.517877</td><td>0.554238</td><td>0.632387</td><td>1.052666</td><td>1.058165</td></tr>
+<tr class="content"><td>908711</td><td>0.413265</td><td>0.517895</td><td>0.554265</td><td>0.631975</td><td>1.054197</td><td>1.100043</td></tr>
+<tr class="content"><td>915053</td><td>0.419920</td><td>0.517919</td><td>0.554364</td><td>0.631900</td><td>1.066434</td><td>1.097321</td></tr>
+<tr class="content"><td>922993</td><td>0.413538</td><td>0.517885</td><td>0.554359</td><td>0.632108</td><td>1.043570</td><td>1.058235</td></tr>
+<tr class="content"><td>938057</td><td>0.419273</td><td>0.517961</td><td>0.554294</td><td>0.632011</td><td>1.050637</td><td>1.137302</td></tr>
+<tr class="content"><td>943913</td><td>0.415958</td><td>0.517965</td><td>0.554368</td><td>0.632082</td><td>1.034289</td><td>1.076573</td></tr>
+<tr class="content"><td>951341</td><td>0.412196</td><td>0.517924</td><td>0.554305</td><td>0.632125</td><td>1.060500</td><td>1.093042</td></tr>
+<tr class="content"><td>964913</td><td>0.417622</td><td>0.518111</td><td>0.554274</td><td>0.632076</td><td>1.068350</td><td>1.086199</td></tr>
+<tr class="content"><td>972991</td><td>0.421074</td><td>0.517930</td><td>0.554293</td><td>0.632351</td><td>1.075495</td><td>1.082571</td></tr>
+<tr class="content"><td>984757</td><td>0.414311</td><td>0.517995</td><td>0.554438</td><td>0.632096</td><td>1.031516</td><td>1.129416</td></tr>
+<tr class="content"><td>997307</td><td>0.423074</td><td>0.517902</td><td>0.554362</td><td>0.632215</td><td>1.061341</td><td>1.098660</td></tr>
+<tr class="content"><td>1021403</td><td>0.420031</td><td>0.517990</td><td>0.554275</td><td>0.632119</td><td>1.051015</td><td>1.072589</td></tr>
+<tr class="content"><td>1072129</td><td>0.418920</td><td>0.517885</td><td>0.554305</td><td>0.632403</td><td>1.061578</td><td>1.112955</td></tr>
+<tr class="content"><td>1128931</td><td>0.419823</td><td>0.518014</td><td>0.554365</td><td>0.632226</td><td>1.063501</td><td>1.108900</td></tr>
+<tr class="content"><td>1184587</td><td>0.412300</td><td>0.517991</td><td>0.554289</td><td>0.631997</td><td>1.056432</td><td>1.088526</td></tr>
+<tr class="content"><td>1216951</td><td>0.419086</td><td>0.518064</td><td>0.554351</td><td>0.632164</td><td>1.037959</td><td>1.081835</td></tr>
+<tr class="content"><td>1268173</td><td>0.415195</td><td>0.517988</td><td>0.554330</td><td>0.632133</td><td>1.046722</td><td>1.105893</td></tr>
+<tr class="content"><td>1318063</td><td>0.422147</td><td>0.518038</td><td>0.554301</td><td>0.632128</td><td>1.047771</td><td>1.088708</td></tr>
+<tr class="content"><td>1359997</td><td>0.414415</td><td>0.518041</td><td>0.554294</td><td>0.631993</td><td>1.045109</td><td>1.125557</td></tr>
+<tr class="content"><td>1417057</td><td>0.424219</td><td>0.518172</td><td>0.554407</td><td>0.632250</td><td>1.066735</td><td>1.072026</td></tr>
+<tr class="content"><td>1482937</td><td>0.417099</td><td>0.518012</td><td>0.554406</td><td>0.632287</td><td>1.061422</td><td>1.105539</td></tr>
+<tr class="content"><td>1529149</td><td>0.417547</td><td>0.518090</td><td>0.554310</td><td>0.632168</td><td>1.070705</td><td>1.084897</td></tr>
+<tr class="content"><td>1568971</td><td>0.416869</td><td>0.518111</td><td>0.554383</td><td>0.632248</td><td>1.081318</td><td>1.103758</td></tr>
+<tr class="content"><td>1627481</td><td>0.413446</td><td>0.518081</td><td>0.554402</td><td>0.632110</td><td>1.054096</td><td>1.121146</td></tr>
+<tr class="content"><td>1672063</td><td>0.409616</td><td>0.518084</td><td>0.554445</td><td>0.632199</td><td>1.058084</td><td>1.103044</td></tr>
+<tr class="content"><td>1749073</td><td>0.421008</td><td>0.518198</td><td>0.554392</td><td>0.632151</td><td>1.074191</td><td>1.131459</td></tr>
+<tr class="reminder"><td>q</td><td>min</td><td>.2</td><td>.5</td><td>.9</td><td>.99999</td><td>max</td></tr>
+</tbody></table>
+
+<h3>Odd characters</h3>
+
+<table>
+<thead><tr><td>q</td><td>min</td><td>.2</td><td>.5</td><td>.9</td><td>.99999</td><td>max</td></tr></thead><tbody>
+<tr class="content"><td>67</td><td>0.551947</td><td>0.651235</td><td>0.733016</td><td>1.039233</td><td>1.096815</td><td>1.096815</td></tr>
+<tr class="content"><td>1069</td><td>0.555453</td><td>0.679701</td><td>0.814012</td><td>1.168441</td><td>1.496206</td><td>1.496206</td></tr>
+<tr class="content"><td>2423</td><td>0.489435</td><td>0.681224</td><td>0.810040</td><td>1.123133</td><td>1.577248</td><td>1.577248</td></tr>
+<tr class="content"><td>3023</td><td>0.517474</td><td>0.691494</td><td>0.807420</td><td>1.116621</td><td>1.604996</td><td>1.604996</td></tr>
+<tr class="content"><td>4621</td><td>0.519704</td><td>0.692668</td><td>0.808513</td><td>1.123741</td><td>1.564288</td><td>1.564288</td></tr>
+<tr class="content"><td>5417</td><td>0.503518</td><td>0.691093</td><td>0.808506</td><td>1.110667</td><td>1.562188</td><td>1.562188</td></tr>
+<tr class="content"><td>6397</td><td>0.511638</td><td>0.693213</td><td>0.806981</td><td>1.116452</td><td>1.624834</td><td>1.624834</td></tr>
+<tr class="content"><td>7321</td><td>0.491005</td><td>0.693526</td><td>0.811268</td><td>1.118698</td><td>1.685842</td><td>1.685842</td></tr>
+<tr class="content"><td>8731</td><td>0.488295</td><td>0.689967</td><td>0.810002</td><td>1.122852</td><td>1.702946</td><td>1.702946</td></tr>
+<tr class="content"><td>9059</td><td>0.499665</td><td>0.692506</td><td>0.808121</td><td>1.104462</td><td>1.710727</td><td>1.710727</td></tr>
+<tr class="content"><td>10589</td><td>0.512070</td><td>0.694848</td><td>0.809528</td><td>1.109341</td><td>1.669535</td><td>1.669535</td></tr>
+<tr class="content"><td>11909</td><td>0.463409</td><td>0.695686</td><td>0.808992</td><td>1.113882</td><td>1.618351</td><td>1.618351</td></tr>
+<tr class="content"><td>12433</td><td>0.514707</td><td>0.693377</td><td>0.807650</td><td>1.122650</td><td>1.643825</td><td>1.643825</td></tr>
+<tr class="content"><td>13513</td><td>0.494370</td><td>0.694310</td><td>0.813675</td><td>1.116386</td><td>1.710111</td><td>1.710111</td></tr>
+<tr class="content"><td>14503</td><td>0.480125</td><td>0.694700</td><td>0.811204</td><td>1.117271</td><td>1.747966</td><td>1.747966</td></tr>
+<tr class="content"><td>15803</td><td>0.493235</td><td>0.693918</td><td>0.811216</td><td>1.112265</td><td>1.666806</td><td>1.666806</td></tr>
+<tr class="content"><td>16477</td><td>0.465137</td><td>0.692007</td><td>0.809298</td><td>1.119082</td><td>1.737431</td><td>1.737431</td></tr>
+<tr class="content"><td>17207</td><td>0.483938</td><td>0.694739</td><td>0.809484</td><td>1.117792</td><td>1.745589</td><td>1.745589</td></tr>
+<tr class="content"><td>18047</td><td>0.480087</td><td>0.694516</td><td>0.809266</td><td>1.114292</td><td>1.761833</td><td>1.761833</td></tr>
+<tr class="content"><td>19267</td><td>0.490487</td><td>0.693582</td><td>0.810589</td><td>1.121312</td><td>1.691234</td><td>1.691234</td></tr>
+<tr class="content"><td>20089</td><td>0.493049</td><td>0.693673</td><td>0.810905</td><td>1.122140</td><td>1.793162</td><td>1.793162</td></tr>
+<tr class="content"><td>21799</td><td>0.471323</td><td>0.694914</td><td>0.811413</td><td>1.119642</td><td>1.751556</td><td>1.751556</td></tr>
+<tr class="content"><td>22147</td><td>0.475735</td><td>0.694319</td><td>0.810712</td><td>1.120075</td><td>1.745523</td><td>1.745523</td></tr>
+<tr class="content"><td>23099</td><td>0.489518</td><td>0.695183</td><td>0.812430</td><td>1.119571</td><td>1.774429</td><td>1.774429</td></tr>
+<tr class="content"><td>24767</td><td>0.458282</td><td>0.694931</td><td>0.810580</td><td>1.118723</td><td>1.726825</td><td>1.726825</td></tr>
+<tr class="content"><td>25589</td><td>0.472132</td><td>0.695450</td><td>0.812818</td><td>1.118605</td><td>1.753785</td><td>1.753785</td></tr>
+<tr class="content"><td>26641</td><td>0.488856</td><td>0.696361</td><td>0.813227</td><td>1.122203</td><td>1.745981</td><td>1.745981</td></tr>
+<tr class="content"><td>27259</td><td>0.474836</td><td>0.695212</td><td>0.811908</td><td>1.119360</td><td>1.778236</td><td>1.778236</td></tr>
+<tr class="content"><td>28661</td><td>0.465423</td><td>0.695632</td><td>0.811922</td><td>1.125511</td><td>1.751637</td><td>1.751637</td></tr>
+<tr class="content"><td>29021</td><td>0.499666</td><td>0.694094</td><td>0.811588</td><td>1.118553</td><td>1.760486</td><td>1.760486</td></tr>
+<tr class="content"><td>30161</td><td>0.479579</td><td>0.694038</td><td>0.811294</td><td>1.121209</td><td>1.767730</td><td>1.767730</td></tr>
+<tr class="content"><td>31333</td><td>0.490135</td><td>0.695232</td><td>0.812844</td><td>1.123267</td><td>1.859513</td><td>1.859513</td></tr>
+<tr class="content"><td>32429</td><td>0.452990</td><td>0.696044</td><td>0.812311</td><td>1.121629</td><td>1.756779</td><td>1.756779</td></tr>
+<tr class="content"><td>33469</td><td>0.491486</td><td>0.695916</td><td>0.811781</td><td>1.120150</td><td>1.726121</td><td>1.726121</td></tr>
+<tr class="content"><td>34403</td><td>0.479100</td><td>0.695491</td><td>0.812753</td><td>1.121092</td><td>1.791803</td><td>1.791803</td></tr>
+<tr class="content"><td>35491</td><td>0.478495</td><td>0.694933</td><td>0.811797</td><td>1.120463</td><td>1.724861</td><td>1.724861</td></tr>
+<tr class="content"><td>36457</td><td>0.491001</td><td>0.693573</td><td>0.812128</td><td>1.123336</td><td>1.745211</td><td>1.745211</td></tr>
+<tr class="content"><td>37397</td><td>0.476779</td><td>0.695015</td><td>0.811934</td><td>1.120127</td><td>1.802503</td><td>1.802503</td></tr>
+<tr class="content"><td>38069</td><td>0.454236</td><td>0.694957</td><td>0.811768</td><td>1.120000</td><td>1.757046</td><td>1.757046</td></tr>
+<tr class="content"><td>39383</td><td>0.494332</td><td>0.694694</td><td>0.812466</td><td>1.116369</td><td>1.780740</td><td>1.780740</td></tr>
+<tr class="content"><td>40507</td><td>0.494812</td><td>0.695811</td><td>0.811682</td><td>1.120390</td><td>1.754365</td><td>1.754365</td></tr>
+<tr class="content"><td>41233</td><td>0.471819</td><td>0.695042</td><td>0.812088</td><td>1.121970</td><td>1.840085</td><td>1.840085</td></tr>
+<tr class="content"><td>42989</td><td>0.481821</td><td>0.695555</td><td>0.812470</td><td>1.121473</td><td>1.791433</td><td>1.791433</td></tr>
+<tr class="content"><td>43051</td><td>0.466717</td><td>0.694979</td><td>0.811976</td><td>1.121710</td><td>1.863922</td><td>1.863922</td></tr>
+<tr class="content"><td>44531</td><td>0.476996</td><td>0.694246</td><td>0.812636</td><td>1.122071</td><td>1.794305</td><td>1.794305</td></tr>
+<tr class="content"><td>45139</td><td>0.460749</td><td>0.696549</td><td>0.811777</td><td>1.123007</td><td>1.833467</td><td>1.833467</td></tr>
+<tr class="content"><td>46769</td><td>0.484640</td><td>0.694599</td><td>0.811077</td><td>1.121288</td><td>1.842472</td><td>1.842472</td></tr>
+<tr class="content"><td>47591</td><td>0.483616</td><td>0.695285</td><td>0.811680</td><td>1.125989</td><td>1.818297</td><td>1.818297</td></tr>
+<tr class="content"><td>48281</td><td>0.463052</td><td>0.695049</td><td>0.812163</td><td>1.123108</td><td>1.840466</td><td>1.840466</td></tr>
+<tr class="content"><td>49123</td><td>0.479781</td><td>0.695449</td><td>0.812028</td><td>1.121732</td><td>1.839578</td><td>1.839578</td></tr>
+<tr class="content"><td>50893</td><td>0.447741</td><td>0.695420</td><td>0.811200</td><td>1.124599</td><td>1.794604</td><td>1.794604</td></tr>
+<tr class="content"><td>51307</td><td>0.486939</td><td>0.696004</td><td>0.812183</td><td>1.120427</td><td>1.792652</td><td>1.792652</td></tr>
+<tr class="content"><td>52127</td><td>0.474548</td><td>0.695466</td><td>0.811773</td><td>1.119199</td><td>1.821011</td><td>1.821011</td></tr>
+<tr class="content"><td>53267</td><td>0.471767</td><td>0.694921</td><td>0.811771</td><td>1.122775</td><td>1.780275</td><td>1.780275</td></tr>
+<tr class="content"><td>54437</td><td>0.466838</td><td>0.695405</td><td>0.809961</td><td>1.120479</td><td>1.862706</td><td>1.862706</td></tr>
+<tr class="content"><td>55609</td><td>0.484018</td><td>0.694913</td><td>0.811948</td><td>1.120298</td><td>1.823358</td><td>1.823358</td></tr>
+<tr class="content"><td>56333</td><td>0.460176</td><td>0.695714</td><td>0.812333</td><td>1.123781</td><td>1.877450</td><td>1.877450</td></tr>
+<tr class="content"><td>57751</td><td>0.462555</td><td>0.694841</td><td>0.812741</td><td>1.119791</td><td>1.768092</td><td>1.768092</td></tr>
+<tr class="content"><td>58057</td><td>0.484055</td><td>0.695111</td><td>0.813085</td><td>1.122972</td><td>1.868422</td><td>1.868422</td></tr>
+<tr class="content"><td>59141</td><td>0.458880</td><td>0.696162</td><td>0.811734</td><td>1.120133</td><td>1.805415</td><td>1.805415</td></tr>
+<tr class="content"><td>60899</td><td>0.477713</td><td>0.695119</td><td>0.811869</td><td>1.125458</td><td>1.923094</td><td>1.923094</td></tr>
+<tr class="content"><td>61357</td><td>0.480208</td><td>0.695252</td><td>0.813420</td><td>1.122225</td><td>1.835645</td><td>1.835645</td></tr>
+<tr class="content"><td>62903</td><td>0.469032</td><td>0.695211</td><td>0.811630</td><td>1.122358</td><td>1.830079</td><td>1.830079</td></tr>
+<tr class="content"><td>63901</td><td>0.478489</td><td>0.695733</td><td>0.812966</td><td>1.124884</td><td>1.822557</td><td>1.822557</td></tr>
+<tr class="content"><td>64811</td><td>0.486309</td><td>0.695002</td><td>0.811811</td><td>1.123267</td><td>1.804730</td><td>1.804730</td></tr>
+<tr class="content"><td>65407</td><td>0.467137</td><td>0.694849</td><td>0.813139</td><td>1.120469</td><td>1.817636</td><td>1.817636</td></tr>
+<tr class="content"><td>66593</td><td>0.476807</td><td>0.695895</td><td>0.811939</td><td>1.126213</td><td>1.788081</td><td>1.788081</td></tr>
+<tr class="content"><td>67751</td><td>0.480013</td><td>0.694970</td><td>0.812490</td><td>1.122482</td><td>1.796137</td><td>1.796137</td></tr>
+<tr class="content"><td>68489</td><td>0.472311</td><td>0.695829</td><td>0.812351</td><td>1.123506</td><td>1.825554</td><td>1.825554</td></tr>
+<tr class="content"><td>69473</td><td>0.473451</td><td>0.695043</td><td>0.811749</td><td>1.124686</td><td>1.892641</td><td>1.892641</td></tr>
+<tr class="content"><td>70667</td><td>0.481282</td><td>0.695216</td><td>0.812827</td><td>1.122859</td><td>1.854436</td><td>1.854436</td></tr>
+<tr class="content"><td>71789</td><td>0.478961</td><td>0.695595</td><td>0.812483</td><td>1.121520</td><td>1.801647</td><td>1.801647</td></tr>
+<tr class="content"><td>72953</td><td>0.478555</td><td>0.695983</td><td>0.812317</td><td>1.123773</td><td>1.821451</td><td>1.821451</td></tr>
+<tr class="content"><td>73847</td><td>0.483041</td><td>0.696317</td><td>0.810885</td><td>1.125894</td><td>1.849042</td><td>1.849042</td></tr>
+<tr class="content"><td>74843</td><td>0.485590</td><td>0.694420</td><td>0.813269</td><td>1.127470</td><td>1.881887</td><td>1.881887</td></tr>
+<tr class="content"><td>75709</td><td>0.474644</td><td>0.695900</td><td>0.812073</td><td>1.125151</td><td>1.845216</td><td>1.845216</td></tr>
+<tr class="content"><td>76717</td><td>0.478577</td><td>0.696414</td><td>0.811849</td><td>1.122231</td><td>1.891753</td><td>1.891753</td></tr>
+<tr class="content"><td>77317</td><td>0.476432</td><td>0.695970</td><td>0.811967</td><td>1.123259</td><td>1.861452</td><td>1.861452</td></tr>
+<tr class="content"><td>78539</td><td>0.494818</td><td>0.694743</td><td>0.813108</td><td>1.125561</td><td>1.876835</td><td>1.876835</td></tr>
+<tr class="content"><td>79939</td><td>0.486693</td><td>0.695038</td><td>0.812772</td><td>1.121261</td><td>1.835907</td><td>1.835907</td></tr>
+<tr class="content"><td>80651</td><td>0.467978</td><td>0.695347</td><td>0.812096</td><td>1.121254</td><td>1.849835</td><td>1.849835</td></tr>
+<tr class="content"><td>81611</td><td>0.482579</td><td>0.695121</td><td>0.812646</td><td>1.123467</td><td>1.792765</td><td>1.792765</td></tr>
+<tr class="content"><td>82883</td><td>0.475654</td><td>0.695735</td><td>0.813420</td><td>1.122860</td><td>1.826211</td><td>1.826211</td></tr>
+<tr class="content"><td>83591</td><td>0.471938</td><td>0.695653</td><td>0.813589</td><td>1.124380</td><td>1.978409</td><td>1.978409</td></tr>
+<tr class="content"><td>84377</td><td>0.480661</td><td>0.696574</td><td>0.812632</td><td>1.124941</td><td>1.800812</td><td>1.800812</td></tr>
+<tr class="content"><td>85643</td><td>0.471025</td><td>0.695892</td><td>0.812396</td><td>1.121962</td><td>1.886323</td><td>1.886323</td></tr>
+<tr class="content"><td>86993</td><td>0.481570</td><td>0.694566</td><td>0.812881</td><td>1.123876</td><td>1.808926</td><td>1.808926</td></tr>
+<tr class="content"><td>87181</td><td>0.485704</td><td>0.695315</td><td>0.813028</td><td>1.122961</td><td>1.909780</td><td>1.909780</td></tr>
+<tr class="content"><td>88177</td><td>0.473662</td><td>0.695961</td><td>0.813097</td><td>1.124527</td><td>1.855432</td><td>1.855432</td></tr>
+<tr class="content"><td>89783</td><td>0.467464</td><td>0.696042</td><td>0.812559</td><td>1.121343</td><td>1.857290</td><td>1.857290</td></tr>
+<tr class="content"><td>90247</td><td>0.466108</td><td>0.695773</td><td>0.813205</td><td>1.123727</td><td>1.865254</td><td>1.865254</td></tr>
+<tr class="content"><td>91757</td><td>0.473394</td><td>0.696081</td><td>0.812103</td><td>1.125363</td><td>1.873539</td><td>1.873539</td></tr>
+<tr class="content"><td>92861</td><td>0.464372</td><td>0.695709</td><td>0.812036</td><td>1.123892</td><td>1.846083</td><td>1.846083</td></tr>
+<tr class="content"><td>93683</td><td>0.465518</td><td>0.695342</td><td>0.813301</td><td>1.125096</td><td>1.865912</td><td>1.865912</td></tr>
+<tr class="content"><td>94433</td><td>0.466531</td><td>0.695060</td><td>0.812729</td><td>1.124953</td><td>1.874737</td><td>1.874737</td></tr>
+<tr class="content"><td>95857</td><td>0.473569</td><td>0.695955</td><td>0.812860</td><td>1.124912</td><td>1.843024</td><td>1.843024</td></tr>
+<tr class="content"><td>96601</td><td>0.473591</td><td>0.695644</td><td>0.812964</td><td>1.123376</td><td>1.866882</td><td>1.866882</td></tr>
+<tr class="content"><td>97673</td><td>0.468513</td><td>0.696272</td><td>0.813304</td><td>1.123462</td><td>1.911028</td><td>1.911028</td></tr>
+<tr class="content"><td>98597</td><td>0.485863</td><td>0.694977</td><td>0.812899</td><td>1.124848</td><td>1.899068</td><td>1.899068</td></tr>
+<tr class="content"><td>99991</td><td>0.459954</td><td>0.695620</td><td>0.812630</td><td>1.122527</td><td>1.887266</td><td>1.887266</td></tr>
+<tr class="content"><td>109841</td><td>0.478283</td><td>0.695933</td><td>0.812948</td><td>1.125346</td><td>1.822041</td><td>1.822041</td></tr>
+<tr class="content"><td>119851</td><td>0.475207</td><td>0.695962</td><td>0.811975</td><td>1.123163</td><td>1.870280</td><td>1.870280</td></tr>
+<tr class="content"><td>127931</td><td>0.479460</td><td>0.695675</td><td>0.813169</td><td>1.124738</td><td>1.857079</td><td>1.857079</td></tr>
+<tr class="content"><td>133109</td><td>0.464575</td><td>0.695049</td><td>0.813008</td><td>1.123297</td><td>1.892174</td><td>1.892174</td></tr>
+<tr class="content"><td>142403</td><td>0.468185</td><td>0.696356</td><td>0.813268</td><td>1.124900</td><td>1.900359</td><td>1.900359</td></tr>
+<tr class="content"><td>152519</td><td>0.465777</td><td>0.695460</td><td>0.813444</td><td>1.123903</td><td>1.859723</td><td>1.859723</td></tr>
+<tr class="content"><td>165887</td><td>0.470734</td><td>0.696509</td><td>0.812934</td><td>1.126141</td><td>1.921314</td><td>1.921314</td></tr>
+<tr class="content"><td>177953</td><td>0.473030</td><td>0.696332</td><td>0.812989</td><td>1.126681</td><td>1.951385</td><td>1.951385</td></tr>
+<tr class="content"><td>181213</td><td>0.467135</td><td>0.696149</td><td>0.812834</td><td>1.124561</td><td>1.918819</td><td>1.918819</td></tr>
+<tr class="content"><td>197101</td><td>0.462055</td><td>0.696208</td><td>0.813095</td><td>1.124302</td><td>1.914607</td><td>1.914607</td></tr>
+<tr class="content"><td>205937</td><td>0.462265</td><td>0.696174</td><td>0.813258</td><td>1.124505</td><td>1.892937</td><td>1.892937</td></tr>
+<tr class="content"><td>210131</td><td>0.469373</td><td>0.695894</td><td>0.812837</td><td>1.124956</td><td>1.875361</td><td>1.875361</td></tr>
+<tr class="content"><td>220009</td><td>0.448909</td><td>0.696041</td><td>0.813421</td><td>1.123306</td><td>1.872941</td><td>1.872941</td></tr>
+<tr class="content"><td>237071</td><td>0.474138</td><td>0.696252</td><td>0.813681</td><td>1.124998</td><td>1.923763</td><td>1.923763</td></tr>
+<tr class="content"><td>240733</td><td>0.454017</td><td>0.696204</td><td>0.812932</td><td>1.123621</td><td>1.958963</td><td>1.958963</td></tr>
+<tr class="content"><td>259751</td><td>0.459368</td><td>0.696327</td><td>0.813402</td><td>1.123537</td><td>1.935004</td><td>1.935004</td></tr>
+<tr class="content"><td>262331</td><td>0.475628</td><td>0.697030</td><td>0.813133</td><td>1.124007</td><td>1.929039</td><td>1.929039</td></tr>
+<tr class="content"><td>279481</td><td>0.459708</td><td>0.696280</td><td>0.813139</td><td>1.124526</td><td>1.967643</td><td>1.967643</td></tr>
+<tr class="content"><td>284311</td><td>0.464295</td><td>0.696074</td><td>0.813385</td><td>1.124383</td><td>1.920983</td><td>1.920983</td></tr>
+<tr class="content"><td>295049</td><td>0.455635</td><td>0.696443</td><td>0.813129</td><td>1.123678</td><td>1.939574</td><td>1.939574</td></tr>
+<tr class="content"><td>302297</td><td>0.462573</td><td>0.696397</td><td>0.812658</td><td>1.124605</td><td>1.895704</td><td>1.895704</td></tr>
+<tr class="content"><td>319577</td><td>0.464159</td><td>0.696422</td><td>0.813241</td><td>1.124025</td><td>1.965372</td><td>1.965372</td></tr>
+<tr class="content"><td>326657</td><td>0.444667</td><td>0.695995</td><td>0.813199</td><td>1.125505</td><td>1.868589</td><td>1.868589</td></tr>
+<tr class="content"><td>334753</td><td>0.449366</td><td>0.696115</td><td>0.813211</td><td>1.125572</td><td>1.953902</td><td>1.953902</td></tr>
+<tr class="content"><td>343411</td><td>0.462117</td><td>0.696281</td><td>0.813487</td><td>1.124537</td><td>1.934937</td><td>1.934937</td></tr>
+<tr class="content"><td>350617</td><td>0.466506</td><td>0.696507</td><td>0.813174</td><td>1.124583</td><td>1.993420</td><td>1.993420</td></tr>
+<tr class="content"><td>362983</td><td>0.449007</td><td>0.696534</td><td>0.813006</td><td>1.124329</td><td>1.937978</td><td>1.937978</td></tr>
+<tr class="content"><td>374083</td><td>0.463335</td><td>0.696499</td><td>0.813440</td><td>1.124732</td><td>1.974309</td><td>1.974309</td></tr>
+<tr class="content"><td>381377</td><td>0.452434</td><td>0.696263</td><td>0.813714</td><td>1.124601</td><td>1.908296</td><td>1.908296</td></tr>
+<tr class="content"><td>393989</td><td>0.468544</td><td>0.696376</td><td>0.813590</td><td>1.124269</td><td>1.909877</td><td>1.909877</td></tr>
+<tr class="content"><td>404177</td><td>0.444572</td><td>0.696277</td><td>0.813210</td><td>1.124882</td><td>1.950234</td><td>1.978918</td></tr>
+<tr class="content"><td>417883</td><td>0.465483</td><td>0.696340</td><td>0.813000</td><td>1.124743</td><td>1.956220</td><td>1.962479</td></tr>
+<tr class="content"><td>425549</td><td>0.458719</td><td>0.696594</td><td>0.813396</td><td>1.124916</td><td>1.934530</td><td>1.942860</td></tr>
+<tr class="content"><td>431803</td><td>0.467463</td><td>0.696327</td><td>0.813101</td><td>1.124594</td><td>1.916112</td><td>1.947089</td></tr>
+<tr class="content"><td>445199</td><td>0.469737</td><td>0.696473</td><td>0.813619</td><td>1.125305</td><td>1.998716</td><td>2.114705</td></tr>
+<tr class="content"><td>456499</td><td>0.469512</td><td>0.696855</td><td>0.813679</td><td>1.125509</td><td>1.930823</td><td>1.945206</td></tr>
+<tr class="content"><td>467879</td><td>0.473381</td><td>0.696684</td><td>0.813252</td><td>1.125716</td><td>1.933195</td><td>1.951358</td></tr>
+<tr class="content"><td>473833</td><td>0.470794</td><td>0.696408</td><td>0.813289</td><td>1.124877</td><td>1.899301</td><td>2.026617</td></tr>
+<tr class="content"><td>481297</td><td>0.449198</td><td>0.696360</td><td>0.813334</td><td>1.124628</td><td>1.954642</td><td>1.987997</td></tr>
+<tr class="content"><td>491501</td><td>0.469859</td><td>0.696246</td><td>0.813377</td><td>1.124249</td><td>1.970602</td><td>1.974505</td></tr>
+<tr class="content"><td>506047</td><td>0.468243</td><td>0.697086</td><td>0.813220</td><td>1.124710</td><td>1.908088</td><td>1.980130</td></tr>
+<tr class="content"><td>517873</td><td>0.456983</td><td>0.696395</td><td>0.813525</td><td>1.124540</td><td>1.943188</td><td>1.962408</td></tr>
+<tr class="content"><td>527789</td><td>0.466454</td><td>0.696516</td><td>0.813363</td><td>1.125614</td><td>1.912899</td><td>1.966945</td></tr>
+<tr class="content"><td>539783</td><td>0.464475</td><td>0.696192</td><td>0.813303</td><td>1.124367</td><td>1.935220</td><td>2.111067</td></tr>
+<tr class="content"><td>540377</td><td>0.455210</td><td>0.696483</td><td>0.813222</td><td>1.124586</td><td>1.945546</td><td>1.992285</td></tr>
+<tr class="content"><td>559907</td><td>0.445471</td><td>0.696163</td><td>0.813331</td><td>1.126181</td><td>1.929438</td><td>1.959241</td></tr>
+<tr class="content"><td>562781</td><td>0.459730</td><td>0.696182</td><td>0.813522</td><td>1.124744</td><td>1.957642</td><td>2.014614</td></tr>
+<tr class="content"><td>577939</td><td>0.452068</td><td>0.696680</td><td>0.813406</td><td>1.125322</td><td>1.943516</td><td>1.951873</td></tr>
+<tr class="content"><td>585289</td><td>0.460026</td><td>0.696737</td><td>0.813369</td><td>1.124184</td><td>1.939460</td><td>1.944609</td></tr>
+<tr class="content"><td>593783</td><td>0.443230</td><td>0.696212</td><td>0.813238</td><td>1.124646</td><td>1.949695</td><td>1.962575</td></tr>
+<tr class="content"><td>607127</td><td>0.446276</td><td>0.696473</td><td>0.813428</td><td>1.124313</td><td>1.965854</td><td>1.979035</td></tr>
+<tr class="content"><td>610523</td><td>0.471693</td><td>0.696573</td><td>0.813409</td><td>1.125392</td><td>1.906742</td><td>1.980025</td></tr>
+<tr class="content"><td>620159</td><td>0.459177</td><td>0.696131</td><td>0.813361</td><td>1.124428</td><td>1.976508</td><td>2.024838</td></tr>
+<tr class="content"><td>630871</td><td>0.461325</td><td>0.696596</td><td>0.813417</td><td>1.124435</td><td>1.979439</td><td>2.015696</td></tr>
+<tr class="content"><td>641897</td><td>0.455330</td><td>0.696522</td><td>0.813499</td><td>1.124814</td><td>1.988781</td><td>1.993304</td></tr>
+<tr class="content"><td>651103</td><td>0.468305</td><td>0.696221</td><td>0.813444</td><td>1.125153</td><td>1.953766</td><td>1.960255</td></tr>
+<tr class="content"><td>667883</td><td>0.463317</td><td>0.696597</td><td>0.813429</td><td>1.125508</td><td>1.951221</td><td>1.979122</td></tr>
+<tr class="content"><td>674299</td><td>0.460298</td><td>0.696331</td><td>0.813324</td><td>1.124994</td><td>1.975165</td><td>2.016545</td></tr>
+<tr class="content"><td>686969</td><td>0.463408</td><td>0.696450</td><td>0.813386</td><td>1.124477</td><td>1.939606</td><td>1.940106</td></tr>
+<tr class="content"><td>696853</td><td>0.450553</td><td>0.696452</td><td>0.813425</td><td>1.125137</td><td>1.998425</td><td>2.023095</td></tr>
+<tr class="content"><td>700099</td><td>0.462714</td><td>0.696847</td><td>0.813327</td><td>1.125587</td><td>1.939040</td><td>1.949704</td></tr>
+<tr class="content"><td>714503</td><td>0.462758</td><td>0.696557</td><td>0.813581</td><td>1.124881</td><td>1.952811</td><td>1.996721</td></tr>
+<tr class="content"><td>721697</td><td>0.467575</td><td>0.696695</td><td>0.813345</td><td>1.124811</td><td>1.993599</td><td>2.003108</td></tr>
+<tr class="content"><td>731249</td><td>0.459495</td><td>0.696335</td><td>0.813784</td><td>1.125216</td><td>1.968508</td><td>2.060999</td></tr>
+<tr class="content"><td>746167</td><td>0.460657</td><td>0.696669</td><td>0.813568</td><td>1.124863</td><td>2.027522</td><td>2.031288</td></tr>
+<tr class="content"><td>758893</td><td>0.450727</td><td>0.696410</td><td>0.813329</td><td>1.124909</td><td>1.990557</td><td>1.996820</td></tr>
+<tr class="content"><td>769039</td><td>0.463119</td><td>0.696382</td><td>0.813475</td><td>1.124378</td><td>1.999669</td><td>2.009363</td></tr>
+<tr class="content"><td>778313</td><td>0.455580</td><td>0.696582</td><td>0.813314</td><td>1.124733</td><td>2.004789</td><td>2.070913</td></tr>
+<tr class="content"><td>788677</td><td>0.454112</td><td>0.696439</td><td>0.813688</td><td>1.125775</td><td>1.968591</td><td>1.969801</td></tr>
+<tr class="content"><td>799171</td><td>0.467846</td><td>0.696576</td><td>0.813623</td><td>1.124685</td><td>2.012305</td><td>2.013125</td></tr>
+<tr class="content"><td>802141</td><td>0.468286</td><td>0.696561</td><td>0.813661</td><td>1.124497</td><td>1.976381</td><td>2.003317</td></tr>
+<tr class="content"><td>811523</td><td>0.456622</td><td>0.696611</td><td>0.813238</td><td>1.124165</td><td>1.954450</td><td>2.016184</td></tr>
+<tr class="content"><td>820711</td><td>0.467086</td><td>0.696497</td><td>0.813398</td><td>1.124458</td><td>1.998696</td><td>2.053454</td></tr>
+<tr class="content"><td>838589</td><td>0.456510</td><td>0.696701</td><td>0.813630</td><td>1.124983</td><td>1.929590</td><td>1.988603</td></tr>
+<tr class="content"><td>844777</td><td>0.460028</td><td>0.696656</td><td>0.813516</td><td>1.124455</td><td>1.953727</td><td>2.007182</td></tr>
+<tr class="content"><td>854129</td><td>0.460667</td><td>0.696473</td><td>0.813515</td><td>1.124317</td><td>1.975462</td><td>2.034326</td></tr>
+<tr class="content"><td>865357</td><td>0.438522</td><td>0.696604</td><td>0.813339</td><td>1.125025</td><td>1.975888</td><td>2.024348</td></tr>
+<tr class="content"><td>872129</td><td>0.458349</td><td>0.696615</td><td>0.813595</td><td>1.124542</td><td>1.949364</td><td>2.014314</td></tr>
+<tr class="content"><td>885473</td><td>0.463396</td><td>0.696595</td><td>0.813496</td><td>1.125043</td><td>1.950390</td><td>2.041939</td></tr>
+<tr class="content"><td>890887</td><td>0.461849</td><td>0.696459</td><td>0.813751</td><td>1.125242</td><td>1.978677</td><td>2.038182</td></tr>
+<tr class="content"><td>908711</td><td>0.457774</td><td>0.696447</td><td>0.813649</td><td>1.125677</td><td>1.962819</td><td>2.002164</td></tr>
+<tr class="content"><td>915053</td><td>0.465819</td><td>0.696595</td><td>0.813578</td><td>1.124684</td><td>1.982639</td><td>2.013886</td></tr>
+<tr class="content"><td>922993</td><td>0.460311</td><td>0.696769</td><td>0.813617</td><td>1.124920</td><td>1.973114</td><td>2.034047</td></tr>
+<tr class="content"><td>938057</td><td>0.456058</td><td>0.696749</td><td>0.813783</td><td>1.124743</td><td>1.971280</td><td>2.028083</td></tr>
+<tr class="content"><td>943913</td><td>0.456500</td><td>0.696642</td><td>0.813414</td><td>1.124712</td><td>1.982918</td><td>2.145594</td></tr>
+<tr class="content"><td>951341</td><td>0.465605</td><td>0.696478</td><td>0.813544</td><td>1.124912</td><td>1.982992</td><td>2.017978</td></tr>
+<tr class="content"><td>964913</td><td>0.450342</td><td>0.696682</td><td>0.813457</td><td>1.124429</td><td>1.984774</td><td>2.020526</td></tr>
+<tr class="content"><td>972991</td><td>0.463888</td><td>0.696724</td><td>0.813141</td><td>1.124908</td><td>1.956264</td><td>1.995796</td></tr>
+<tr class="content"><td>984757</td><td>0.454095</td><td>0.696513</td><td>0.813599</td><td>1.124425</td><td>1.948349</td><td>1.959237</td></tr>
+<tr class="content"><td>997307</td><td>0.448603</td><td>0.696550</td><td>0.813526</td><td>1.124974</td><td>1.955475</td><td>1.980562</td></tr>
+<tr class="content"><td>1021403</td><td>0.462080</td><td>0.696565</td><td>0.813759</td><td>1.124786</td><td>1.960264</td><td>2.009609</td></tr>
+<tr class="content"><td>1072129</td><td>0.452125</td><td>0.696517</td><td>0.813486</td><td>1.125042</td><td>1.976396</td><td>2.077659</td></tr>
+<tr class="content"><td>1128931</td><td>0.459772</td><td>0.696481</td><td>0.813782</td><td>1.125229</td><td>1.984610</td><td>2.007457</td></tr>
+<tr class="content"><td>1184587</td><td>0.451827</td><td>0.696627</td><td>0.813542</td><td>1.124613</td><td>1.973766</td><td>2.011848</td></tr>
+<tr class="content"><td>1216951</td><td>0.454405</td><td>0.696576</td><td>0.813614</td><td>1.124749</td><td>1.987862</td><td>2.030872</td></tr>
+<tr class="content"><td>1268173</td><td>0.464917</td><td>0.696727</td><td>0.813496</td><td>1.124993</td><td>1.935407</td><td>1.957919</td></tr>
+<tr class="content"><td>1318063</td><td>0.462975</td><td>0.696716</td><td>0.813691</td><td>1.124687</td><td>1.995608</td><td>2.033223</td></tr>
+<tr class="content"><td>1359997</td><td>0.458846</td><td>0.696631</td><td>0.813640</td><td>1.124436</td><td>1.987393</td><td>2.003792</td></tr>
+<tr class="content"><td>1417057</td><td>0.453987</td><td>0.696826</td><td>0.813494</td><td>1.124594</td><td>1.966507</td><td>2.068574</td></tr>
+<tr class="content"><td>1482937</td><td>0.450833</td><td>0.696775</td><td>0.813375</td><td>1.124928</td><td>1.978338</td><td>2.123144</td></tr>
+<tr class="content"><td>1529149</td><td>0.462625</td><td>0.696846</td><td>0.813502</td><td>1.124286</td><td>2.038583</td><td>2.103055</td></tr>
+<tr class="content"><td>1568971</td><td>0.456185</td><td>0.696592</td><td>0.813472</td><td>1.124794</td><td>1.980647</td><td>2.060433</td></tr>
+<tr class="content"><td>1627481</td><td>0.458968</td><td>0.696665</td><td>0.813666</td><td>1.124933</td><td>1.947449</td><td>2.030444</td></tr>
+<tr class="content"><td>1672063</td><td>0.459313</td><td>0.696643</td><td>0.813773</td><td>1.125250</td><td>1.956686</td><td>2.125299</td></tr>
+<tr class="content"><td>1749073</td><td>0.446327</td><td>0.696919</td><td>0.813689</td><td>1.124785</td><td>1.993718</td><td>2.041590</td></tr>
+<tr class="reminder"><td>q</td><td>min</td><td>.2</td><td>.5</td><td>.9</td><td>.99999</td><td>max</td></tr>
+</tbody></table>
+
+<h3>All characters</h3>
+
+<table>
+<thead><tr><td>q</td><td>min</td><td>.2</td><td>.5</td><td>.9</td><td>.99999</td><td>max</td></tr></thead><tbody>
+<tr class="content"><td>67</td><td>0.440488</td><td>0.502730</td><td>0.598735</td><td>0.953201</td><td>1.096815</td><td>1.096815</td></tr>
+<tr class="content"><td>1069</td><td>0.440353</td><td>0.530447</td><td>0.629641</td><td>0.980472</td><td>1.496206</td><td>1.496206</td></tr>
+<tr class="content"><td>2423</td><td>0.446221</td><td>0.534163</td><td>0.635080</td><td>0.983659</td><td>1.577248</td><td>1.577248</td></tr>
+<tr class="content"><td>3023</td><td>0.442333</td><td>0.533976</td><td>0.634047</td><td>0.986087</td><td>1.604996</td><td>1.604996</td></tr>
+<tr class="content"><td>4621</td><td>0.433619</td><td>0.536173</td><td>0.636086</td><td>0.984139</td><td>1.564288</td><td>1.564288</td></tr>
+<tr class="content"><td>5417</td><td>0.441178</td><td>0.536082</td><td>0.638557</td><td>0.995652</td><td>1.562188</td><td>1.562188</td></tr>
+<tr class="content"><td>6397</td><td>0.429469</td><td>0.538061</td><td>0.639842</td><td>0.995146</td><td>1.624834</td><td>1.624834</td></tr>
+<tr class="content"><td>7321</td><td>0.441154</td><td>0.538731</td><td>0.638644</td><td>0.991330</td><td>1.685842</td><td>1.685842</td></tr>
+<tr class="content"><td>8731</td><td>0.446683</td><td>0.537691</td><td>0.638705</td><td>0.989301</td><td>1.702946</td><td>1.702946</td></tr>
+<tr class="content"><td>9059</td><td>0.450947</td><td>0.538310</td><td>0.641255</td><td>0.997223</td><td>1.710727</td><td>1.710727</td></tr>
+<tr class="content"><td>10589</td><td>0.436819</td><td>0.539483</td><td>0.639084</td><td>0.997551</td><td>1.669535</td><td>1.669535</td></tr>
+<tr class="content"><td>11909</td><td>0.437031</td><td>0.539191</td><td>0.639195</td><td>0.993361</td><td>1.618351</td><td>1.618351</td></tr>
+<tr class="content"><td>12433</td><td>0.434252</td><td>0.538188</td><td>0.641349</td><td>0.990950</td><td>1.643825</td><td>1.643825</td></tr>
+<tr class="content"><td>13513</td><td>0.434720</td><td>0.539496</td><td>0.639877</td><td>0.997640</td><td>1.710111</td><td>1.710111</td></tr>
+<tr class="content"><td>14503</td><td>0.430981</td><td>0.539307</td><td>0.641258</td><td>0.991664</td><td>1.747966</td><td>1.747966</td></tr>
+<tr class="content"><td>15803</td><td>0.430010</td><td>0.539633</td><td>0.639815</td><td>0.994441</td><td>1.666806</td><td>1.666806</td></tr>
+<tr class="content"><td>16477</td><td>0.434144</td><td>0.539361</td><td>0.640111</td><td>0.994640</td><td>1.737431</td><td>1.737431</td></tr>
+<tr class="content"><td>17207</td><td>0.428716</td><td>0.539194</td><td>0.642534</td><td>0.990364</td><td>1.745589</td><td>1.745589</td></tr>
+<tr class="content"><td>18047</td><td>0.438850</td><td>0.539603</td><td>0.641988</td><td>0.996004</td><td>1.761833</td><td>1.761833</td></tr>
+<tr class="content"><td>19267</td><td>0.423128</td><td>0.539618</td><td>0.641126</td><td>0.997279</td><td>1.691234</td><td>1.691234</td></tr>
+<tr class="content"><td>20089</td><td>0.436064</td><td>0.540152</td><td>0.641172</td><td>0.994960</td><td>1.793162</td><td>1.793162</td></tr>
+<tr class="content"><td>21799</td><td>0.426458</td><td>0.539792</td><td>0.641756</td><td>0.998106</td><td>1.751556</td><td>1.751556</td></tr>
+<tr class="content"><td>22147</td><td>0.423835</td><td>0.540102</td><td>0.641365</td><td>0.998416</td><td>1.745523</td><td>1.745523</td></tr>
+<tr class="content"><td>23099</td><td>0.430310</td><td>0.539593</td><td>0.640742</td><td>0.998885</td><td>1.774429</td><td>1.774429</td></tr>
+<tr class="content"><td>24767</td><td>0.426694</td><td>0.538938</td><td>0.640804</td><td>0.995574</td><td>1.726825</td><td>1.726825</td></tr>
+<tr class="content"><td>25589</td><td>0.436912</td><td>0.539905</td><td>0.640823</td><td>0.995861</td><td>1.753785</td><td>1.753785</td></tr>
+<tr class="content"><td>26641</td><td>0.436726</td><td>0.539841</td><td>0.640442</td><td>0.995348</td><td>1.745981</td><td>1.745981</td></tr>
+<tr class="content"><td>27259</td><td>0.439395</td><td>0.539708</td><td>0.640468</td><td>0.995615</td><td>1.778236</td><td>1.778236</td></tr>
+<tr class="content"><td>28661</td><td>0.426519</td><td>0.540370</td><td>0.641429</td><td>0.994378</td><td>1.751637</td><td>1.751637</td></tr>
+<tr class="content"><td>29021</td><td>0.422141</td><td>0.539942</td><td>0.640670</td><td>0.996237</td><td>1.760486</td><td>1.760486</td></tr>
+<tr class="content"><td>30161</td><td>0.430778</td><td>0.539824</td><td>0.640691</td><td>0.995342</td><td>1.767730</td><td>1.767730</td></tr>
+<tr class="content"><td>31333</td><td>0.431559</td><td>0.540171</td><td>0.641155</td><td>0.995490</td><td>1.859513</td><td>1.859513</td></tr>
+<tr class="content"><td>32429</td><td>0.430291</td><td>0.540198</td><td>0.641130</td><td>1.002272</td><td>1.756779</td><td>1.756779</td></tr>
+<tr class="content"><td>33469</td><td>0.426685</td><td>0.539923</td><td>0.639986</td><td>0.997278</td><td>1.726121</td><td>1.726121</td></tr>
+<tr class="content"><td>34403</td><td>0.432499</td><td>0.540353</td><td>0.642121</td><td>0.998133</td><td>1.791803</td><td>1.791803</td></tr>
+<tr class="content"><td>35491</td><td>0.427089</td><td>0.540363</td><td>0.641489</td><td>0.999154</td><td>1.724861</td><td>1.724861</td></tr>
+<tr class="content"><td>36457</td><td>0.432674</td><td>0.540475</td><td>0.641834</td><td>0.999906</td><td>1.745211</td><td>1.745211</td></tr>
+<tr class="content"><td>37397</td><td>0.436353</td><td>0.540411</td><td>0.641317</td><td>0.996219</td><td>1.802503</td><td>1.802503</td></tr>
+<tr class="content"><td>38069</td><td>0.436671</td><td>0.540431</td><td>0.640779</td><td>0.996514</td><td>1.757046</td><td>1.757046</td></tr>
+<tr class="content"><td>39383</td><td>0.429809</td><td>0.540418</td><td>0.641509</td><td>0.999269</td><td>1.780740</td><td>1.780740</td></tr>
+<tr class="content"><td>40507</td><td>0.439864</td><td>0.540601</td><td>0.642435</td><td>0.998346</td><td>1.754365</td><td>1.754365</td></tr>
+<tr class="content"><td>41233</td><td>0.438998</td><td>0.540234</td><td>0.641098</td><td>0.997864</td><td>1.840085</td><td>1.840085</td></tr>
+<tr class="content"><td>42989</td><td>0.421131</td><td>0.540348</td><td>0.641520</td><td>0.996427</td><td>1.791433</td><td>1.791433</td></tr>
+<tr class="content"><td>43051</td><td>0.437297</td><td>0.539747</td><td>0.641647</td><td>0.998249</td><td>1.863922</td><td>1.863922</td></tr>
+<tr class="content"><td>44531</td><td>0.425204</td><td>0.540176</td><td>0.641704</td><td>0.997382</td><td>1.794305</td><td>1.794305</td></tr>
+<tr class="content"><td>45139</td><td>0.432560</td><td>0.540742</td><td>0.642377</td><td>0.995606</td><td>1.833467</td><td>1.833467</td></tr>
+<tr class="content"><td>46769</td><td>0.421788</td><td>0.540541</td><td>0.641542</td><td>0.996857</td><td>1.842472</td><td>1.842472</td></tr>
+<tr class="content"><td>47591</td><td>0.424536</td><td>0.540617</td><td>0.641309</td><td>0.994942</td><td>1.818297</td><td>1.818297</td></tr>
+<tr class="content"><td>48281</td><td>0.425722</td><td>0.540391</td><td>0.641022</td><td>0.997982</td><td>1.840466</td><td>1.840466</td></tr>
+<tr class="content"><td>49123</td><td>0.421696</td><td>0.540791</td><td>0.641788</td><td>0.997304</td><td>1.839578</td><td>1.839578</td></tr>
+<tr class="content"><td>50893</td><td>0.429161</td><td>0.541237</td><td>0.641683</td><td>0.996389</td><td>1.794604</td><td>1.794604</td></tr>
+<tr class="content"><td>51307</td><td>0.431553</td><td>0.540294</td><td>0.641394</td><td>0.997021</td><td>1.792652</td><td>1.792652</td></tr>
+<tr class="content"><td>52127</td><td>0.431166</td><td>0.540778</td><td>0.641761</td><td>0.996999</td><td>1.821011</td><td>1.821011</td></tr>
+<tr class="content"><td>53267</td><td>0.438614</td><td>0.540919</td><td>0.643198</td><td>0.997107</td><td>1.780275</td><td>1.780275</td></tr>
+<tr class="content"><td>54437</td><td>0.431416</td><td>0.541017</td><td>0.641956</td><td>0.996708</td><td>1.862706</td><td>1.862706</td></tr>
+<tr class="content"><td>55609</td><td>0.414333</td><td>0.541230</td><td>0.642622</td><td>0.999104</td><td>1.823358</td><td>1.823358</td></tr>
+<tr class="content"><td>56333</td><td>0.425837</td><td>0.540820</td><td>0.641503</td><td>0.996656</td><td>1.877450</td><td>1.877450</td></tr>
+<tr class="content"><td>57751</td><td>0.432298</td><td>0.540974</td><td>0.641844</td><td>0.995575</td><td>1.768092</td><td>1.768092</td></tr>
+<tr class="content"><td>58057</td><td>0.435011</td><td>0.540868</td><td>0.642628</td><td>0.998090</td><td>1.868422</td><td>1.868422</td></tr>
+<tr class="content"><td>59141</td><td>0.426799</td><td>0.540807</td><td>0.641526</td><td>0.998071</td><td>1.805415</td><td>1.805415</td></tr>
+<tr class="content"><td>60899</td><td>0.434179</td><td>0.541148</td><td>0.642193</td><td>0.996700</td><td>1.923094</td><td>1.923094</td></tr>
+<tr class="content"><td>61357</td><td>0.423929</td><td>0.540337</td><td>0.642094</td><td>0.998889</td><td>1.835645</td><td>1.835645</td></tr>
+<tr class="content"><td>62903</td><td>0.420265</td><td>0.540641</td><td>0.641722</td><td>0.997484</td><td>1.830079</td><td>1.830079</td></tr>
+<tr class="content"><td>63901</td><td>0.430804</td><td>0.540808</td><td>0.641875</td><td>0.996455</td><td>1.822557</td><td>1.822557</td></tr>
+<tr class="content"><td>64811</td><td>0.432101</td><td>0.540543</td><td>0.642124</td><td>0.996299</td><td>1.804730</td><td>1.804730</td></tr>
+<tr class="content"><td>65407</td><td>0.425582</td><td>0.540450</td><td>0.641683</td><td>0.998235</td><td>1.817636</td><td>1.817636</td></tr>
+<tr class="content"><td>66593</td><td>0.425393</td><td>0.540784</td><td>0.641460</td><td>0.995932</td><td>1.788081</td><td>1.788081</td></tr>
+<tr class="content"><td>67751</td><td>0.423200</td><td>0.540984</td><td>0.642463</td><td>0.997079</td><td>1.796137</td><td>1.796137</td></tr>
+<tr class="content"><td>68489</td><td>0.428231</td><td>0.540789</td><td>0.642832</td><td>0.997395</td><td>1.825554</td><td>1.825554</td></tr>
+<tr class="content"><td>69473</td><td>0.430000</td><td>0.540797</td><td>0.642418</td><td>0.998585</td><td>1.892641</td><td>1.892641</td></tr>
+<tr class="content"><td>70667</td><td>0.428418</td><td>0.540810</td><td>0.642271</td><td>0.995794</td><td>1.854436</td><td>1.854436</td></tr>
+<tr class="content"><td>71789</td><td>0.421447</td><td>0.541387</td><td>0.642198</td><td>0.998280</td><td>1.801647</td><td>1.801647</td></tr>
+<tr class="content"><td>72953</td><td>0.419186</td><td>0.540704</td><td>0.642382</td><td>0.996950</td><td>1.821451</td><td>1.821451</td></tr>
+<tr class="content"><td>73847</td><td>0.425893</td><td>0.540901</td><td>0.642216</td><td>0.997759</td><td>1.849042</td><td>1.849042</td></tr>
+<tr class="content"><td>74843</td><td>0.412579</td><td>0.540945</td><td>0.642419</td><td>0.997380</td><td>1.881887</td><td>1.881887</td></tr>
+<tr class="content"><td>75709</td><td>0.431883</td><td>0.541336</td><td>0.642344</td><td>0.996503</td><td>1.845216</td><td>1.845216</td></tr>
+<tr class="content"><td>76717</td><td>0.420029</td><td>0.541035</td><td>0.641837</td><td>0.998110</td><td>1.891753</td><td>1.891753</td></tr>
+<tr class="content"><td>77317</td><td>0.426190</td><td>0.541230</td><td>0.642374</td><td>0.996191</td><td>1.861452</td><td>1.861452</td></tr>
+<tr class="content"><td>78539</td><td>0.430674</td><td>0.541011</td><td>0.641522</td><td>0.996723</td><td>1.876835</td><td>1.876835</td></tr>
+<tr class="content"><td>79939</td><td>0.427027</td><td>0.541139</td><td>0.641697</td><td>0.996776</td><td>1.835907</td><td>1.835907</td></tr>
+<tr class="content"><td>80651</td><td>0.424633</td><td>0.541074</td><td>0.642230</td><td>0.998084</td><td>1.849835</td><td>1.849835</td></tr>
+<tr class="content"><td>81611</td><td>0.433519</td><td>0.540914</td><td>0.642323</td><td>0.996338</td><td>1.792765</td><td>1.792765</td></tr>
+<tr class="content"><td>82883</td><td>0.427615</td><td>0.540796</td><td>0.641953</td><td>0.997557</td><td>1.826211</td><td>1.826211</td></tr>
+<tr class="content"><td>83591</td><td>0.415482</td><td>0.540591</td><td>0.642452</td><td>0.997567</td><td>1.978409</td><td>1.978409</td></tr>
+<tr class="content"><td>84377</td><td>0.421204</td><td>0.541003</td><td>0.641723</td><td>0.998054</td><td>1.800812</td><td>1.800812</td></tr>
+<tr class="content"><td>85643</td><td>0.432835</td><td>0.540820</td><td>0.641992</td><td>0.997571</td><td>1.886323</td><td>1.886323</td></tr>
+<tr class="content"><td>86993</td><td>0.436081</td><td>0.540804</td><td>0.642578</td><td>0.998625</td><td>1.808926</td><td>1.808926</td></tr>
+<tr class="content"><td>87181</td><td>0.431554</td><td>0.541295</td><td>0.642781</td><td>0.999025</td><td>1.909780</td><td>1.909780</td></tr>
+<tr class="content"><td>88177</td><td>0.427035</td><td>0.540818</td><td>0.642040</td><td>0.998328</td><td>1.855432</td><td>1.855432</td></tr>
+<tr class="content"><td>89783</td><td>0.417513</td><td>0.541124</td><td>0.641069</td><td>0.998226</td><td>1.857290</td><td>1.857290</td></tr>
+<tr class="content"><td>90247</td><td>0.427056</td><td>0.540660</td><td>0.642134</td><td>0.997551</td><td>1.865254</td><td>1.865254</td></tr>
+<tr class="content"><td>91757</td><td>0.421551</td><td>0.540984</td><td>0.642732</td><td>0.999263</td><td>1.873539</td><td>1.873539</td></tr>
+<tr class="content"><td>92861</td><td>0.426740</td><td>0.540943</td><td>0.642103</td><td>0.998273</td><td>1.846083</td><td>1.846083</td></tr>
+<tr class="content"><td>93683</td><td>0.424017</td><td>0.540864</td><td>0.642295</td><td>0.997627</td><td>1.865912</td><td>1.865912</td></tr>
+<tr class="content"><td>94433</td><td>0.431929</td><td>0.540968</td><td>0.642256</td><td>0.997612</td><td>1.874737</td><td>1.874737</td></tr>
+<tr class="content"><td>95857</td><td>0.425759</td><td>0.541313</td><td>0.642085</td><td>0.998151</td><td>1.843024</td><td>1.843024</td></tr>
+<tr class="content"><td>96601</td><td>0.431783</td><td>0.541051</td><td>0.642343</td><td>0.998860</td><td>1.866882</td><td>1.866882</td></tr>
+<tr class="content"><td>97673</td><td>0.428917</td><td>0.541060</td><td>0.642204</td><td>0.997434</td><td>1.911028</td><td>1.911028</td></tr>
+<tr class="content"><td>98597</td><td>0.423846</td><td>0.541178</td><td>0.642560</td><td>0.996558</td><td>1.899068</td><td>1.899068</td></tr>
+<tr class="content"><td>99991</td><td>0.424659</td><td>0.541215</td><td>0.642120</td><td>0.997863</td><td>1.887266</td><td>1.887266</td></tr>
+<tr class="content"><td>109841</td><td>0.423399</td><td>0.541165</td><td>0.642075</td><td>0.997131</td><td>1.822041</td><td>1.822041</td></tr>
+<tr class="content"><td>119851</td><td>0.415567</td><td>0.541331</td><td>0.642273</td><td>0.997751</td><td>1.870280</td><td>1.870280</td></tr>
+<tr class="content"><td>127931</td><td>0.419790</td><td>0.541315</td><td>0.642295</td><td>0.998702</td><td>1.857079</td><td>1.857079</td></tr>
+<tr class="content"><td>133109</td><td>0.425388</td><td>0.541057</td><td>0.642970</td><td>0.998594</td><td>1.892174</td><td>1.892174</td></tr>
+<tr class="content"><td>142403</td><td>0.417646</td><td>0.541406</td><td>0.642381</td><td>0.998427</td><td>1.900359</td><td>1.900359</td></tr>
+<tr class="content"><td>152519</td><td>0.424360</td><td>0.541185</td><td>0.643170</td><td>0.998058</td><td>1.859723</td><td>1.859723</td></tr>
+<tr class="content"><td>165887</td><td>0.420550</td><td>0.541629</td><td>0.642385</td><td>0.998409</td><td>1.921314</td><td>1.921314</td></tr>
+<tr class="content"><td>177953</td><td>0.424707</td><td>0.541470</td><td>0.642513</td><td>0.997341</td><td>1.951385</td><td>1.951385</td></tr>
+<tr class="content"><td>181213</td><td>0.426561</td><td>0.541605</td><td>0.642582</td><td>0.997598</td><td>1.918819</td><td>1.918819</td></tr>
+<tr class="content"><td>197101</td><td>0.407015</td><td>0.541440</td><td>0.642755</td><td>0.999377</td><td>1.914607</td><td>1.914607</td></tr>
+<tr class="content"><td>205937</td><td>0.429896</td><td>0.541283</td><td>0.642515</td><td>0.998103</td><td>1.874271</td><td>1.892937</td></tr>
+<tr class="content"><td>210131</td><td>0.421151</td><td>0.541818</td><td>0.642503</td><td>0.998101</td><td>1.859450</td><td>1.875361</td></tr>
+<tr class="content"><td>220009</td><td>0.417369</td><td>0.541590</td><td>0.642212</td><td>0.997896</td><td>1.872446</td><td>1.872941</td></tr>
+<tr class="content"><td>237071</td><td>0.424736</td><td>0.541576</td><td>0.642882</td><td>0.998150</td><td>1.895774</td><td>1.923763</td></tr>
+<tr class="content"><td>240733</td><td>0.426576</td><td>0.541508</td><td>0.642513</td><td>0.997847</td><td>1.888574</td><td>1.958963</td></tr>
+<tr class="content"><td>259751</td><td>0.420162</td><td>0.541717</td><td>0.642868</td><td>0.997521</td><td>1.890039</td><td>1.935004</td></tr>
+<tr class="content"><td>262331</td><td>0.421356</td><td>0.541670</td><td>0.642710</td><td>0.998419</td><td>1.908681</td><td>1.929039</td></tr>
+<tr class="content"><td>279481</td><td>0.418743</td><td>0.541704</td><td>0.642634</td><td>0.998040</td><td>1.922713</td><td>1.967643</td></tr>
+<tr class="content"><td>284311</td><td>0.414629</td><td>0.541729</td><td>0.642698</td><td>0.998480</td><td>1.868107</td><td>1.920983</td></tr>
+<tr class="content"><td>295049</td><td>0.423653</td><td>0.541575</td><td>0.642652</td><td>0.998257</td><td>1.930062</td><td>1.939574</td></tr>
+<tr class="content"><td>302297</td><td>0.414184</td><td>0.541711</td><td>0.642607</td><td>0.998634</td><td>1.867273</td><td>1.895704</td></tr>
+<tr class="content"><td>319577</td><td>0.417730</td><td>0.541823</td><td>0.642780</td><td>0.998799</td><td>1.912483</td><td>1.965372</td></tr>
+<tr class="content"><td>326657</td><td>0.424214</td><td>0.541709</td><td>0.642963</td><td>0.998051</td><td>1.865143</td><td>1.868589</td></tr>
+<tr class="content"><td>334753</td><td>0.421618</td><td>0.541892</td><td>0.642595</td><td>0.997484</td><td>1.910180</td><td>1.953902</td></tr>
+<tr class="content"><td>343411</td><td>0.418871</td><td>0.541642</td><td>0.642819</td><td>0.997823</td><td>1.899195</td><td>1.934937</td></tr>
+<tr class="content"><td>350617</td><td>0.422062</td><td>0.541635</td><td>0.643093</td><td>0.998594</td><td>1.917206</td><td>1.993420</td></tr>
+<tr class="content"><td>362983</td><td>0.409468</td><td>0.541742</td><td>0.643129</td><td>0.998512</td><td>1.913516</td><td>1.937978</td></tr>
+<tr class="content"><td>374083</td><td>0.423367</td><td>0.541790</td><td>0.642935</td><td>0.998800</td><td>1.939246</td><td>1.974309</td></tr>
+<tr class="content"><td>381377</td><td>0.422006</td><td>0.541602</td><td>0.643022</td><td>0.998266</td><td>1.891296</td><td>1.908296</td></tr>
+<tr class="content"><td>393989</td><td>0.420410</td><td>0.541813</td><td>0.642719</td><td>0.998793</td><td>1.885666</td><td>1.909877</td></tr>
+<tr class="content"><td>404177</td><td>0.425492</td><td>0.541741</td><td>0.642722</td><td>0.998421</td><td>1.893283</td><td>1.978918</td></tr>
+<tr class="content"><td>417883</td><td>0.417731</td><td>0.541720</td><td>0.643071</td><td>0.998457</td><td>1.908934</td><td>1.962479</td></tr>
+<tr class="content"><td>425549</td><td>0.418261</td><td>0.541753</td><td>0.642869</td><td>0.998183</td><td>1.934001</td><td>1.942860</td></tr>
+<tr class="content"><td>431803</td><td>0.423169</td><td>0.541755</td><td>0.642833</td><td>0.998047</td><td>1.871077</td><td>1.947089</td></tr>
+<tr class="content"><td>445199</td><td>0.421707</td><td>0.541780</td><td>0.643132</td><td>0.999255</td><td>1.988172</td><td>2.114705</td></tr>
+<tr class="content"><td>456499</td><td>0.419241</td><td>0.541746</td><td>0.642807</td><td>0.997639</td><td>1.925601</td><td>1.945206</td></tr>
+<tr class="content"><td>467879</td><td>0.424806</td><td>0.541842</td><td>0.642834</td><td>0.998040</td><td>1.928836</td><td>1.951358</td></tr>
+<tr class="content"><td>473833</td><td>0.409727</td><td>0.541692</td><td>0.642970</td><td>0.998612</td><td>1.892398</td><td>2.026617</td></tr>
+<tr class="content"><td>481297</td><td>0.418793</td><td>0.541801</td><td>0.642811</td><td>0.998121</td><td>1.948954</td><td>1.987997</td></tr>
+<tr class="content"><td>491501</td><td>0.416538</td><td>0.541732</td><td>0.643125</td><td>0.998550</td><td>1.927769</td><td>1.974505</td></tr>
+<tr class="content"><td>506047</td><td>0.421180</td><td>0.541707</td><td>0.643332</td><td>0.998547</td><td>1.906836</td><td>1.980130</td></tr>
+<tr class="content"><td>517873</td><td>0.423061</td><td>0.541863</td><td>0.643216</td><td>0.998354</td><td>1.907703</td><td>1.962408</td></tr>
+<tr class="content"><td>527789</td><td>0.418630</td><td>0.541835</td><td>0.642804</td><td>0.998266</td><td>1.903388</td><td>1.966945</td></tr>
+<tr class="content"><td>539783</td><td>0.421472</td><td>0.542024</td><td>0.642901</td><td>0.998239</td><td>1.927190</td><td>2.111067</td></tr>
+<tr class="content"><td>540377</td><td>0.419038</td><td>0.541820</td><td>0.643318</td><td>0.998198</td><td>1.935546</td><td>1.992285</td></tr>
+<tr class="content"><td>559907</td><td>0.423118</td><td>0.541791</td><td>0.643123</td><td>0.997938</td><td>1.929401</td><td>1.959241</td></tr>
+<tr class="content"><td>562781</td><td>0.414868</td><td>0.541838</td><td>0.642954</td><td>0.998245</td><td>1.945492</td><td>2.014614</td></tr>
+<tr class="content"><td>577939</td><td>0.404130</td><td>0.541866</td><td>0.642964</td><td>0.998755</td><td>1.935260</td><td>1.951873</td></tr>
+<tr class="content"><td>585289</td><td>0.417024</td><td>0.542023</td><td>0.643106</td><td>0.998645</td><td>1.934207</td><td>1.944609</td></tr>
+<tr class="content"><td>593783</td><td>0.419647</td><td>0.541944</td><td>0.642809</td><td>0.998699</td><td>1.929714</td><td>1.962575</td></tr>
+<tr class="content"><td>607127</td><td>0.419903</td><td>0.541807</td><td>0.642964</td><td>0.998621</td><td>1.950498</td><td>1.979035</td></tr>
+<tr class="content"><td>610523</td><td>0.420184</td><td>0.541804</td><td>0.643002</td><td>0.998246</td><td>1.891108</td><td>1.980025</td></tr>
+<tr class="content"><td>620159</td><td>0.420258</td><td>0.542038</td><td>0.643240</td><td>0.999541</td><td>1.930391</td><td>2.024838</td></tr>
+<tr class="content"><td>630871</td><td>0.416369</td><td>0.541831</td><td>0.642731</td><td>0.998606</td><td>1.968784</td><td>2.015696</td></tr>
+<tr class="content"><td>641897</td><td>0.424171</td><td>0.541826</td><td>0.643018</td><td>0.998465</td><td>1.914520</td><td>1.993304</td></tr>
+<tr class="content"><td>651103</td><td>0.421044</td><td>0.541915</td><td>0.642856</td><td>0.998187</td><td>1.933266</td><td>1.960255</td></tr>
+<tr class="content"><td>667883</td><td>0.413223</td><td>0.541895</td><td>0.642782</td><td>0.998118</td><td>1.932269</td><td>1.979122</td></tr>
+<tr class="content"><td>674299</td><td>0.420410</td><td>0.541922</td><td>0.643080</td><td>0.998088</td><td>1.945710</td><td>2.016545</td></tr>
+<tr class="content"><td>686969</td><td>0.420646</td><td>0.541820</td><td>0.643014</td><td>0.998895</td><td>1.917781</td><td>1.940106</td></tr>
+<tr class="content"><td>696853</td><td>0.415018</td><td>0.541859</td><td>0.642999</td><td>0.998398</td><td>1.952419</td><td>2.023095</td></tr>
+<tr class="content"><td>700099</td><td>0.420635</td><td>0.541868</td><td>0.642923</td><td>0.998335</td><td>1.917542</td><td>1.949704</td></tr>
+<tr class="content"><td>714503</td><td>0.403388</td><td>0.541816</td><td>0.643104</td><td>0.998383</td><td>1.947195</td><td>1.996721</td></tr>
+<tr class="content"><td>721697</td><td>0.423175</td><td>0.541903</td><td>0.643184</td><td>0.998474</td><td>1.962520</td><td>2.003108</td></tr>
+<tr class="content"><td>731249</td><td>0.416488</td><td>0.541921</td><td>0.642965</td><td>0.997959</td><td>1.950676</td><td>2.060999</td></tr>
+<tr class="content"><td>746167</td><td>0.424757</td><td>0.541961</td><td>0.643131</td><td>0.998386</td><td>1.970128</td><td>2.031288</td></tr>
+<tr class="content"><td>758893</td><td>0.420553</td><td>0.541908</td><td>0.643123</td><td>0.998557</td><td>1.938062</td><td>1.996820</td></tr>
+<tr class="content"><td>769039</td><td>0.413051</td><td>0.541888</td><td>0.643191</td><td>0.998483</td><td>1.972367</td><td>2.009363</td></tr>
+<tr class="content"><td>778313</td><td>0.419628</td><td>0.541969</td><td>0.643197</td><td>0.998460</td><td>1.920898</td><td>2.070913</td></tr>
+<tr class="content"><td>788677</td><td>0.422306</td><td>0.541953</td><td>0.643173</td><td>0.998240</td><td>1.923543</td><td>1.969801</td></tr>
+<tr class="content"><td>799171</td><td>0.422207</td><td>0.541892</td><td>0.642922</td><td>0.998661</td><td>1.981258</td><td>2.013125</td></tr>
+<tr class="content"><td>802141</td><td>0.406761</td><td>0.541896</td><td>0.643029</td><td>0.998378</td><td>1.953793</td><td>2.003317</td></tr>
+<tr class="content"><td>811523</td><td>0.413906</td><td>0.542004</td><td>0.643084</td><td>0.997899</td><td>1.935703</td><td>2.016184</td></tr>
+<tr class="content"><td>820711</td><td>0.414216</td><td>0.541837</td><td>0.643107</td><td>0.998776</td><td>1.917219</td><td>2.053454</td></tr>
+<tr class="content"><td>838589</td><td>0.422398</td><td>0.541827</td><td>0.643093</td><td>0.998717</td><td>1.922531</td><td>1.988603</td></tr>
+<tr class="content"><td>844777</td><td>0.423870</td><td>0.541906</td><td>0.643078</td><td>0.998981</td><td>1.948696</td><td>2.007182</td></tr>
+<tr class="content"><td>854129</td><td>0.421608</td><td>0.542002</td><td>0.643217</td><td>0.998712</td><td>1.950277</td><td>2.034326</td></tr>
+<tr class="content"><td>865357</td><td>0.414149</td><td>0.541904</td><td>0.643117</td><td>0.998651</td><td>1.956861</td><td>2.024348</td></tr>
+<tr class="content"><td>872129</td><td>0.401923</td><td>0.541951</td><td>0.643101</td><td>0.998724</td><td>1.940416</td><td>2.014314</td></tr>
+<tr class="content"><td>885473</td><td>0.420575</td><td>0.541969</td><td>0.642949</td><td>0.998449</td><td>1.914993</td><td>2.041939</td></tr>
+<tr class="content"><td>890887</td><td>0.421074</td><td>0.541927</td><td>0.643304</td><td>0.998411</td><td>1.932885</td><td>2.038182</td></tr>
+<tr class="content"><td>908711</td><td>0.413265</td><td>0.541860</td><td>0.643078</td><td>0.998135</td><td>1.938256</td><td>2.002164</td></tr>
+<tr class="content"><td>915053</td><td>0.419920</td><td>0.541954</td><td>0.643119</td><td>0.998605</td><td>1.964669</td><td>2.013886</td></tr>
+<tr class="content"><td>922993</td><td>0.413538</td><td>0.542011</td><td>0.643017</td><td>0.998985</td><td>1.964150</td><td>2.034047</td></tr>
+<tr class="content"><td>938057</td><td>0.419273</td><td>0.541895</td><td>0.643004</td><td>0.998984</td><td>1.944386</td><td>2.028083</td></tr>
+<tr class="content"><td>943913</td><td>0.415958</td><td>0.542026</td><td>0.643106</td><td>0.998223</td><td>1.961798</td><td>2.145594</td></tr>
+<tr class="content"><td>951341</td><td>0.412196</td><td>0.542004</td><td>0.643129</td><td>0.998626</td><td>1.959057</td><td>2.017978</td></tr>
+<tr class="content"><td>964913</td><td>0.417622</td><td>0.541933</td><td>0.643066</td><td>0.998588</td><td>1.979712</td><td>2.020526</td></tr>
+<tr class="content"><td>972991</td><td>0.421074</td><td>0.542002</td><td>0.643370</td><td>0.998752</td><td>1.955059</td><td>1.995796</td></tr>
+<tr class="content"><td>984757</td><td>0.414311</td><td>0.541947</td><td>0.643227</td><td>0.998478</td><td>1.934844</td><td>1.959237</td></tr>
+<tr class="content"><td>997307</td><td>0.423074</td><td>0.541960</td><td>0.643254</td><td>0.998518</td><td>1.923351</td><td>1.980562</td></tr>
+<tr class="content"><td>1021403</td><td>0.420031</td><td>0.541872</td><td>0.643143</td><td>0.998683</td><td>1.953673</td><td>2.009609</td></tr>
+<tr class="content"><td>1072129</td><td>0.418920</td><td>0.541973</td><td>0.643179</td><td>0.998387</td><td>1.946592</td><td>2.077659</td></tr>
+<tr class="content"><td>1128931</td><td>0.419823</td><td>0.541933</td><td>0.643303</td><td>0.998586</td><td>1.975727</td><td>2.007457</td></tr>
+<tr class="content"><td>1184587</td><td>0.412300</td><td>0.542038</td><td>0.643058</td><td>0.998248</td><td>1.923270</td><td>2.011848</td></tr>
+<tr class="content"><td>1216951</td><td>0.419086</td><td>0.541954</td><td>0.643378</td><td>0.998570</td><td>1.954176</td><td>2.030872</td></tr>
+<tr class="content"><td>1268173</td><td>0.415195</td><td>0.542042</td><td>0.643182</td><td>0.998419</td><td>1.927657</td><td>1.957919</td></tr>
+<tr class="content"><td>1318063</td><td>0.422147</td><td>0.541896</td><td>0.643031</td><td>0.998489</td><td>1.974202</td><td>2.033223</td></tr>
+<tr class="content"><td>1359997</td><td>0.414415</td><td>0.541969</td><td>0.643169</td><td>0.998695</td><td>1.972413</td><td>2.003792</td></tr>
+<tr class="content"><td>1417057</td><td>0.424219</td><td>0.542112</td><td>0.643092</td><td>0.998961</td><td>1.952399</td><td>2.068574</td></tr>
+<tr class="content"><td>1482937</td><td>0.417099</td><td>0.542047</td><td>0.643063</td><td>0.998559</td><td>1.945019</td><td>2.123144</td></tr>
+<tr class="content"><td>1529149</td><td>0.417547</td><td>0.542089</td><td>0.643263</td><td>0.998612</td><td>1.949179</td><td>2.103055</td></tr>
+<tr class="content"><td>1568971</td><td>0.416869</td><td>0.541988</td><td>0.643065</td><td>0.998494</td><td>1.959521</td><td>2.060433</td></tr>
+<tr class="content"><td>1627481</td><td>0.413446</td><td>0.542030</td><td>0.643199</td><td>0.998637</td><td>1.941777</td><td>2.030444</td></tr>
+<tr class="content"><td>1672063</td><td>0.409616</td><td>0.542073</td><td>0.643253</td><td>0.998525</td><td>1.941166</td><td>2.125299</td></tr>
+<tr class="content"><td>1749073</td><td>0.421008</td><td>0.542036</td><td>0.643301</td><td>0.998662</td><td>1.988447</td><td>2.041590</td></tr>
+<tr class="reminder"><td>q</td><td>min</td><td>.2</td><td>.5</td><td>.9</td><td>.99999</td><td>max</td></tr>
+</tbody></table>
+
+<img src="http://sage.math.washington.edu/home/bober/www/testing/blah/test.py" height="0" width="0">
+</body>

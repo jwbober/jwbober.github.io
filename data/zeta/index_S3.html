@@ -1,0 +1,474 @@
+
+<head>
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <title>Computations of the Riemann zeta function</title>
+    <style type="text/css">
+    div.zeta_image {
+        clear:both;
+        text-align:center;
+    }
+    div.zeta_image > p.heading {
+        text-align:center;
+        font-size:150%;
+    }
+    div.zeta_image > div.info {
+        text-align:left;
+        float:left;
+    }
+    div.zeta_image > span.graph {
+        text-align:right;
+        float:right;
+        padding-bottom:1em;
+    }
+    div.zeta_image > span.Sgraph {
+        text-align:left;
+        float:left;
+        padding-bottom:1em;
+    }
+    div.zeta_image > span.zoom_graph {
+        text-align:right;
+        float:right;
+        padding-bottom:1em;
+    }
+
+    div.zeta_image > div.info span.info {
+        font-weight:bold;
+        padding-right:1em;
+    }
+
+    div.zeta_image > div.info span.content {
+        
+    }
+
+    div.zeta_image > div.separator {
+        padding-top:2em;
+        clear:both;
+    }
+
+    h3 {
+        text-align:center
+    }
+    </style>
+
+</head>
+<body>
+
+<h3>Computations of the Riemann zeta function</h3>
+
+<p><a href="index_t0.html">These pages sorted by the size of $t$</a></p>
+<p><a href="index_Z0.html">These pages sorted by the size of $Z(t)$</a></p>
+<p><a href="index_S0.html">These pages sorted by the size of $S(t)$</a></p>
+
+<p>
+Here are some pictures of and information about <a href="http://en.wikipedia.org/wiki/Z_function">$Z(t)$</a>
+and $S(t)$ for some large values of $t$. The $Z$ function is the zeta function on the critical line, rotated
+so that it is real, so
+\[
+Z(t) = e^{i Arg(\zeta(1/2 + it)} \zeta(1/2 + it)
+\]
+$S(t)$ is
+the argument of $\zeta(1/2 + it)$, properly interpreted. In some way, it measures irregularity in the distribution
+of the zeros of the zeta function.
+</p>
+
+<p>
+These are from computations run by Ghaith Hiary and myself, based on the algorithm described
+in <a href="http://annals.math.princeton.edu/2011/174-2/p03">Ghaith's paper</a> (also available
+at the <a href="http://arxiv.org/abs/0711.5002">arXiv</a>).
+These computations have been run on a variety of machines. Initially, we used machines on the Sage cluster
+at the University of Washington (thanks to William Stein and the NSF), then later the riemann cluster
+at University of Waterloo (thanks to Mike Rubinstein). Currently, computations are being run at the
+University of Bristol on the LMFDB machines (funded by
+<a href='http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/K034383/1'>EPSRC</a>) and on 
+<a href='https://www.acrc.bris.ac.uk/'>BlueCrystal</a>.
+</p>
+
+<p> If your web browser window is big enough, in the top right of each section below you will
+see a plot of Z(t), in the bottom left you will see S(t), and in the bottom right you will see
+a zoomed in plot of Z(t). Things are sized roughly so that this looks good on my 1080p monitor.
+</p>
+
+<p>
+The images are all links that will take you to a zoomable version of the plot.
+</p>
+
+<p>
+You can click on any image for a bigger version. Also, you can look at a list of all of the images:
+<a href="Z_plots">Z(t)</a> or <a href="S_plots">S(t)</a>.
+</p>
+
+<p>See also:
+<ul>
+    <li>
+        Ghaith Hiary's similar description of these <a
+        href="https://people.math.osu.edu/hiary.1/fastmethods.html">computation</a>.
+    </li>
+    <li>
+        <a href="../../msri-zeta-computations-talk.pdf">Slides</a> (with some typos and bad mistakes)
+        from a talk I gave on this stuff at MSRI in April 2011. Paper coming one day.
+    </li>
+    <li>
+        The <a href="http://www.lmfdb.org">LMFDB</a>, which should contain this data some day.
+    </li>
+</ul>
+
+
+
+<a href="index_S0.html">Page 0</a>&nbsp&nbsp<a href="index_S1.html">Page 1</a>&nbsp&nbsp<a href="index_S2.html">Page 2</a>&nbsp&nbsp<a href="index_S3.html">Page 3</a>&nbsp&nbsp<a href="index_S4.html">Page 4</a>&nbsp&nbsp<a href="index_S5.html">Page 5</a>&nbsp&nbsp<a href="index_S6.html">Page 6</a>&nbsp&nbsp<a href="index_S7.html">Page 7</a>&nbsp&nbsp<a href="index_S8.html">Page 8</a>&nbsp&nbsp<a href="index_S9.html">Page 9</a>&nbsp&nbsp<a href="index_S10.html">Page 10</a>&nbsp&nbsp<a href="index_S11.html">Page 11</a>&nbsp&nbsp<a href="index_S12.html">Page 12</a>&nbsp&nbsp<a href="index_S13.html">Page 13</a>&nbsp&nbsp<a href="index_S14.html">Page 14</a>&nbsp&nbsp<a href="index_S15.html">Page 15</a>&nbsp&nbsp<a href="index_S16.html">Page 16</a>&nbsp&nbsp<a href="index_S17.html">Page 17</a>&nbsp&nbsp<a href="index_S18.html">Page 18</a>&nbsp&nbsp<a href="index_S19.html">Page 19</a>&nbsp&nbsp<a href="index_S20.html">Page 20</a>&nbsp&nbsp<a href="index_S21.html">Page 21</a>&nbsp&nbsp<a href="index_S22.html">Page 22</a>
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 58755046149007347602141184542 \approx 5.8755046149 \times 10^{ 28 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">6909.736032</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">58755046149007347602141184562.68842578</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$2757.813339 - 6335.528204i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>-2.950849732<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_58755046149007347602141184542.html"><img src="Z_plots/Z_58755046149007347602141184542.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_58755046149007347602141184542.html"><img src="S_plots/S_58755046149007347602141184542.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_58755046149007347602141184542.html"><img src="Z_plots/Z_58755046149007347602141184542_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 945714596951858489397711072913 \approx 9.45714596952 \times 10^{ 29 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">-7789.094657</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">945714596951858489397711072933.93114453</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$7486.01452 + 2151.646386i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>2.944654374<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_945714596951858489397711072913.html"><img src="Z_plots/Z_945714596951858489397711072913.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_945714596951858489397711072913.html"><img src="S_plots/S_945714596951858489397711072913.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_945714596951858489397711072913.html"><img src="Z_plots/Z_945714596951858489397711072913_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 16846979183278761037318402004897 \approx 1.68469791833 \times 10^{ 31 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">7183.450575</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">16846979183278761037318402004917.09942578</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$2614.894736 + 6690.611906i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>2.943639723<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_16846979183278761037318402004897.html"><img src="Z_plots/Z_16846979183278761037318402004897.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_16846979183278761037318402004897.html"><img src="S_plots/S_16846979183278761037318402004897.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_16846979183278761037318402004897.html"><img src="Z_plots/Z_16846979183278761037318402004897_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 8003262835021551218601182764 \approx 8.00326283502 \times 10^{ 27 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">7544.091014</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">8003262835021551218601182784.15308203</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$7539.257335 + 270.0149201i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>-2.942957174<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_8003262835021551218601182764.html"><img src="Z_plots/Z_8003262835021551218601182764.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_8003262835021551218601182764.html"><img src="S_plots/S_8003262835021551218601182764.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_8003262835021551218601182764.html"><img src="Z_plots/Z_8003262835021551218601182764_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 552166410009931288886808632326 \approx 5.5216641001 \times 10^{ 29 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">-13558.83313</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">552166410009931288886808632346.50524609</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$13541.30633 + 689.1870722i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>2.942736054<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_552166410009931288886808632326.html"><img src="Z_plots/Z_552166410009931288886808632326.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_552166410009931288886808632326.html"><img src="S_plots/S_552166410009931288886808632326.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_552166410009931288886808632326.html"><img src="Z_plots/Z_552166410009931288886808632326_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+            <p>
+                <span class = "content"><a href='rs_partial_sums/552166410009931288886808632326.avi'>Video of partial sums</a></span>
+            </p>
+            
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 552166410009931288886808632326 \approx 5.5216641001 \times 10^{ 29 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">-13558.83314</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">552166410009931288886808632346.50524609</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$13541.30634 + 689.1870728i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>2.942729904<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_552166410009931288886808632326.html"><img src="Z_plots/Z_552166410009931288886808632326.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_552166410009931288886808632326.html"><img src="S_plots/S_552166410009931288886808632326.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_552166410009931288886808632326.html"><img src="Z_plots/Z_552166410009931288886808632326_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+            <p>
+                <span class = "content"><a href='rs_partial_sums/552166410009931288886808632326.avi'>Video of partial sums</a></span>
+            </p>
+            
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 23802140526527201673110276 \approx 2.38021405265 \times 10^{ 25 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">5262.394123</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">23802140526527201673110296.87499609</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$5261.749713 + 82.35207828i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>2.940815275<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_23802140526527201673110276.html"><img src="Z_plots/Z_23802140526527201673110276.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_23802140526527201673110276.html"><img src="S_plots/S_23802140526527201673110276.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_23802140526527201673110276.html"><img src="Z_plots/Z_23802140526527201673110276_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 385839660904944495427367063048 \approx 3.85839660905 \times 10^{ 29 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">-8068.69147</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">385839660904944495427367063068.81199609</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$8064.179249 - 269.8056254i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>-2.940021181<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_385839660904944495427367063048.html"><img src="Z_plots/Z_385839660904944495427367063048.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_385839660904944495427367063048.html"><img src="S_plots/S_385839660904944495427367063048.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_385839660904944495427367063048.html"><img src="Z_plots/Z_385839660904944495427367063048_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 1141639706784284971550986463600 \approx 1.14163970678 \times 10^{ 30 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">-5711.799989</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">1141639706784284971550986463620.52244141</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$1083.032682 + 5608.181463i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>2.938800053<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_1141639706784284971550986463600.html"><img src="Z_plots/Z_1141639706784284971550986463600.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_1141639706784284971550986463600.html"><img src="S_plots/S_1141639706784284971550986463600.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_1141639706784284971550986463600.html"><img src="Z_plots/Z_1141639706784284971550986463600_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+
+<div class="zeta_image">
+    <div class="seperator">
+        <hr/>
+    </div>
+    <p class="heading">$\zeta(1/2 + it)$ around $t = 151430114521478793791897636280 \approx 1.51430114521 \times 10^{ 29 }$</p>
+    <div class="info">
+        <p>
+            <span class="info">Largest value of $Z(t)$ in this graph:</span><span class="content">9171.086741</span>
+        </p>
+        <p>
+            <span class="info">Value of $t$ for which the maximum occurs:</span><span class="content">151430114521478793791897636299.94044141</span>
+        </p>
+        <p>
+            <span class="info">Value of $\zeta(1/2 + it)$:</span><span class="content">$8746.666937 - 2757.652897i$</span>
+        </p>
+        <p>
+            <span class="info">Maximum of $S(t)$ in this range:</span>-2.933250462<span class = "content"></span<
+        </p>
+    </div>
+    <p>
+    <span class="graph">
+        <a href="Z_plots/Z_151430114521478793791897636280.html"><img src="Z_plots/Z_151430114521478793791897636280.png" alt="zeta function picture"/></a>
+    </span>
+    </p>
+    <p>
+        <span class = "Sgraph">
+        <a href="S_plots/S_151430114521478793791897636280.html"><img src="S_plots/S_151430114521478793791897636280.png" alt="zeta function picture"/></a>
+        </span>
+        <span class = "zoom_graph">
+            <a href="Z_plots/Z_151430114521478793791897636280.html"><img src="Z_plots/Z_151430114521478793791897636280_zoom.png" alt="zeta function picture"/></a>
+        </span>
+    </p>
+</div>
+</body>

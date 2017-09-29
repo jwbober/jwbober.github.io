@@ -1,0 +1,36 @@
+#header {
+    margin-left:auto;
+    margin-right:auto;
+    max-width:60em;
+}
+
+#header #leftmargin {
+    float:left;
+    max-width:50%;
+}
+
+#header #rightmargin {
+    float:left;
+    max-width:50%
+}
+
+#header #picture{
+    float:left;
+}
+#header #info{
+    margin-top:auto;
+    margin-bottom:auto;
+    float:right;
+}
+div.content {
+    margin-left:auto;
+    margin-right:auto;
+    max-width:60em;
+    clear:both;
+}
+div.spacer {
+    clear:both;
+    width:100%;
+    height:1em;
+    float:left;
+}
